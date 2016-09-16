@@ -22,7 +22,7 @@ tags:
 ---
 # Intro
 
-This guide will show you how to create a generic remote control for sending ssh commands via Android widgets. Generic means that you have full control over the layout, since you can order the widgets &#8211; as usual &#8211; in whichever position you like. There are a couple of apps in the Play Store that are able to send ssh commands, but I don't like them because of the design and the layout restrictions. So the main advantage of the appraoch I will show you is that you have full control over the layout. The disadvantage of the approach is that response time is not very good (2-5sec) since a new ssh connection will be created each time you execute a command &#8211; and destroyed when the command has been executed. If this is not an issue for you, and you like the idea, then this guide is for you.
+This guide will show you how to create a generic remote control for sending ssh commands via Android widgets. Generic means that you have full control over the layout, since you can order the widgets &#8211; as usual &#8211; in whichever position you like. There are a couple of apps in the Play Store that are able to send ssh commands, but I don&#8217;t like them because of the design and the layout restrictions. So the main advantage of the appraoch I will show you is that you have full control over the layout. The disadvantage of the approach is that response time is not very good (2-5sec) since a new ssh connection will be created each time you execute a command &#8211; and destroyed when the command has been executed. If this is not an issue for you, and you like the idea, then this guide is for you.
 
 This guide will use the apps  [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) (2,99€) and [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand) (1,17€) to accomplish all that.
 
@@ -34,7 +34,7 @@ Like most of my posts, this is not a out-of-the-box solution and requires some k
 
 <!--more-->
 
-Just to give you an impression, here is a screenshot of my current layout, I control my media center with, when I don't expect immediate response.
+Just to give you an impression, here is a screenshot of my current layout, I control my media center with, when I don&#8217;t expect immediate response.
 
 [<img class="alignnone  wp-image-124" alt="24947" src="http://i2.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24947.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i2.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24947.png?ssl=1)
 
@@ -42,7 +42,7 @@ Note: I blurred the icons due to copyright. The icons show icons of radio stream
 
 # History
 
-A while ago I purchased my Rasperry Pi (RPi) and I am using it as my media center ([Raspbmc](http://www.raspbmc.com/)), together with my NAS. So I am watching movies and TV, listen to music and streams and so on. If my PC is not up and I can't send any commands via ssh, I always have to power on my TV. This is quite annoying. And which is most annoying is that I always execute some command from my Android device via ConnectBot, before I go to bed, in order start a timer to stop music playback. (I fall to sleep with music, best 😉 )
+A while ago I purchased my Rasperry Pi (RPi) and I am using it as my media center ([Raspbmc](http://www.raspbmc.com/)), together with my NAS. So I am watching movies and TV, listen to music and streams and so on. If my PC is not up and I can&#8217;t send any commands via ssh, I always have to power on my TV. This is quite annoying. And which is most annoying is that I always execute some command from my Android device via ConnectBot, before I go to bed, in order start a timer to stop music playback. (I fall to sleep with music, best 😉 )
 
 Since I hate doing the same over and over again (login via ConnectBot, type some command), I tried several ssh remote controls, but I did not like one of them. So I started to think that it would be nice to  do the same with widgets. Just before I started to develop this myself, I found [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand) which does exactly what I wanted. Even though the setup has some disadvantages, namely the delay, I can live with this. When I need better response times, I connect to my RPi via ssh directly or use Yatse.
 
@@ -74,15 +74,15 @@ Now you can go to the widget selection page and drag the Task widget on one of y
 
 [<img class="alignnone  wp-image-122" alt="24928" src="http://i1.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24928.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i1.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24928.png?ssl=1)
 
-This will open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) again. Select your task from the list (e.g. Stop 30). Make sure to click on &#8220;Task&#8221; in the upper right corner, again. If you click on Cancel, Back or Home, the widget won't get created.
+This will open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) again. Select your task from the list (e.g. Stop 30). Make sure to click on &#8220;Task&#8221; in the upper right corner, again. If you click on Cancel, Back or Home, the widget won&#8217;t get created.
 
-If everything went well, you'll now have the task&#8217;s icon on one of your home screens and you should be able to execute your specified command on your remote machine. Don&#8217;t forget that it takes some seconds until the command gets send.
+If everything went well, you&#8217;ll now have the task&#8217;s icon on one of your home screens and you should be able to execute your specified command on your remote machine. Don&#8217;t forget that it takes some seconds until the command gets send.
 
 [<img class="alignnone  wp-image-123" alt="24931" src="http://i0.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24931.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i0.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24931.png?ssl=1)
 
 ## Central script directory (optional)
 
-Even though you can provide a command directly in [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand), I like to have the scripts and so the commands at a central place. So I am also able to execute those scripts easily from my PC and don't need to provide them twice. Personally I place them under _~/scripts/remote_ but this is up to you, of course.
+Even though you can provide a command directly in [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand), I like to have the scripts and so the commands at a central place. So I am also able to execute those scripts easily from my PC and don&#8217;t need to provide them twice. Personally I place them under _~/scripts/remote_ but this is up to you, of course.
 
 ## Scripts for XBMC
 
@@ -122,17 +122,17 @@ xbmc-send --action="PlayMedia($1)"
 
 I am using it for example to start a radio streams (.pls).
 
-You might wonder about line 3 and 4 in the script. If I do not stop playback and don't wait for a second, then my RPi or rather [Raspbmc](http://www.raspbmc.com/) will crash. So this is a workaround to avoid a crash by delaying playback of the next resource. It might be that you don&#8217;t have those problems and maybe it&#8217;s specific to [Raspbmc](http://www.raspbmc.com/), only.
+You might wonder about line 3 and 4 in the script. If I do not stop playback and don&#8217;t wait for a second, then my RPi or rather [Raspbmc](http://www.raspbmc.com/) will crash. So this is a workaround to avoid a crash by delaying playback of the next resource. It might be that you don&#8217;t have those problems and maybe it&#8217;s specific to [Raspbmc](http://www.raspbmc.com/), only.
 
 In case you want to execute some plugin functionality, remotely, then you should check ~/.xmbc/xbmc.log. This is especially usefuly, when you want to know which streams or resource is opened. Check for this line &#8220;COMXPlayer: Opening: &#8230;&#8221;.
 
-Note: If you only want to use all this for controlling XBMC, then instead of using ssh, you could also use [XBMC's REST API](http://wiki.xbmc.org/index.php?title=JSON-RPC_API) and utilize the [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) plugin [RESTask for Tasker](https://play.google.com/store/apps/details?id=com.freehaha.restask) to access it.
+Note: If you only want to use all this for controlling XBMC, then instead of using ssh, you could also use [XBMC&#8217;s REST API](http://wiki.xbmc.org/index.php?title=JSON-RPC_API) and utilize the [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) plugin [RESTask for Tasker](https://play.google.com/store/apps/details?id=com.freehaha.restask) to access it.
 
 ## Connection via public/private key (optional)
 
 This is an optional step, because you can also provide username and password in [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand).
 
-However, if you don't want to provide your password and/or connect to your ssh server quite often, I recommend this step.
+However, if you don&#8217;t want to provide your password and/or connect to your ssh server quite often, I recommend this step.
 
 ### Create a public/private key-pair
 
@@ -152,13 +152,13 @@ This will generate two files: a private key wihout any extension (e.g. ~/.ssh/rp
 
 If you like to, you can use that key, in ConnectBot, too.
 
-Copy your private key (e.g. rpi) to your Android device's &#8221; mounting root&#8221; folder (the folder you see, when mounting your device to your PC).
+Copy your private key (e.g. rpi) to your Android device&#8217;s &#8221; mounting root&#8221; folder (the folder you see, when mounting your device to your PC).
 
 Start ConnectBot and import your private key via: Menu->&#8221;Manage Pubkeys&#8221;->Menu->&#8221;Import&#8221; and select your private key from the list (e.g. rpi).
 
 ### Install the public key on your remote server
 
-In case, you don't have a ssh server installed, install for example openssh. On a Debian-based distribution: _sudo apt-get install openssh-server_
+In case, you don&#8217;t have a ssh server installed, install for example openssh. On a Debian-based distribution: _sudo apt-get install openssh-server_
 
   1. <span style="line-height: 13px;"><span style="line-height: 13px;">If your ssh server is on a remote machine, connect to it (<em>ssh <usernam>@<ip></em>)</span></span>&nbsp;
   2. Check if the folder _~/.ssh and the file_ _~/.ssh/authorized_keys_ exist (not the case on RPi). If not: Create the folder and the file with proper permissions: _cd ~ && mkdir .ssh && chmod 700 .ssh && touch .ssh/authorized\_keys && chmod 600 .ssh/authorized\_keys_

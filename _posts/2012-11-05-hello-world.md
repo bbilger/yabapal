@@ -9,7 +9,7 @@ permalink: /2012/11/05/hello-world/
 categories:
   - Uncategorized
 ---
-# What's this?
+# What&#8217;s this?
 
 This is yet another blog about programming and linux.
 
