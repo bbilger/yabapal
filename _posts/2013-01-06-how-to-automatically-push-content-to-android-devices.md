@@ -29,7 +29,7 @@ The setup might take some time, but if you finish this guide, you can simply gra
 A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many tablets, a WiFi-only device. So I cannot use it on my way to work, to read or watch the latest news. In order to overcome this limitation, two solutions exist:
 
   1. tethering my smartphone to the tablet
-  2. using an app like <a title="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en" href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en" target="_blank">Pocket (Formerly Read It Later)</a>
+  2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en){:target="_blank"}
 
 I don&#8217;t like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it&#8217;s simply too much work early in the morning&#8230;
 
