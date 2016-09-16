@@ -94,31 +94,34 @@ With _xbmc-send_ you are able to execute any of the commands provided by XBMC. A
 
 The syntax for executing a command is:
 
-<pre class="brush: bash; title: ; notranslate" title="">xbmc-send --action="&lt;some command&gt;"
-</pre>
+``` bash
+xbmc-send --action="&lt;some command&gt;"
+```
 
 Here are two scripts I am currently using:
 
 The first script stops playback after a given time:
 
-<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+``` bash
+#!/bin/bash
 stop_time="$1"
 if [ "x$1" = "x" ]; then
          stop_time="0"
 fi
 echo 'xbmc-send --action="PlayerControl(Stop)"' | at now+"$stop_time"min
-</pre>
+```
 
 So in case of the example given in this guide, I pass 30 as a parameter to the script and playback would stop after 30 minutes.
 
 The second script is a generic script for playing any type of media.
 
-<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+``` bash
+#!/bin/bash
 cd $(dirname $0)
 ./stop 0
 sleep 1
 xbmc-send --action="PlayMedia($1)"
-</pre>
+```
 
 I am using it for example to start a radio streams (.pls).
 
@@ -138,8 +141,9 @@ However, if you don&#8217;t want to provide your password and/or connect to your
 
 Just execute the following command from a terminal, in order to create a public/private key-pair. You can do this on your local machine.
 
-<pre class="brush: bash; title: ; notranslate" title="">ssh-keygen -t rsa
-</pre>
+``` bash
+ssh-keygen -t rsa
+```
 
 Just follow the instructions&#8230;
 

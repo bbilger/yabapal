@@ -23,7 +23,8 @@ One of those tricky things with generics is to make sure that a type implements 
 
 Let&#8217;s say we want to have a method that appends a newline character to either a StringBuilder or StringBuffer. Both classes implement CharSequence and Appendable but without multiple bounds you won&#8217;t have a chance to support both with one method and you&#8217;ll end up duplicating your code.
 
-<pre class="brush: java; title: ; notranslate" title="">public void finishLine(StringBuffer str) {
+``` java
+public void finishLine(StringBuffer str) {
 	int len = str.length();
 	char newline = '\n';
 	if (len == 0 || str.charAt(len-1) != newline) {
@@ -37,11 +38,12 @@ public void finishLine(StringBuilder str) {
 		str.append(newline);
 	}
 }
-</pre>
+```
 
 Even though you could reduce code duplicity slightly with some refactoring, this is not necessary at all. Check this example using multiple bounds:
 
-<pre class="brush: java; title: ; notranslate" title="">public &lt;T extends Appendable & CharSequence&gt; void finishLine(T str) {
+``` java
+public <T extends Appendable & CharSequence> void finishLine(T str) {
 	int len = str.length();
 	char newline = '\n';
 	if (len == 0 || str.charAt(len-1) != newline) {
@@ -52,7 +54,7 @@ Even though you could reduce code duplicity slightly with some refactoring, this
 		}
 	}
 }
-</pre>
+```
 
 (BTW: no idea why they designed Appendable&#8217;s append method to throw an IOException&#8230;)
 
@@ -62,8 +64,8 @@ There&#8217;s just one rule for those bounds:
 
 So those examples won&#8217;t compile:
 
-  * <span style="line-height: 13px;"><span style="line-height: 13px;"> </span></span><span style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px;"><em><T extends Interface1 & Class></em> (use: <em><T extends Class & InterfaceX & &#8230; & InterfaceN></em>, instead)</span>
-  * _<T extends Class1 & Class2 & &#8230;.>_  (this simply does not work)
+  * `<T extends Interface1 & Class>` (use: `<T extends Class & InterfaceX & ... & InterfaceN>`, instead)</span>
+  * `<T extends Class1 & Class2 & ...>`  (this simply does not work)
 
 With this neat &#8220;trick&#8221; it is possible to
 

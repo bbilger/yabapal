@@ -29,34 +29,36 @@ First thing you want to do is to open the application menu&#8217;s properties me
 
 Next you need to install two packages:
 
-<pre class="brush: plain; title: ; notranslate" title="">sudo yum install google-droid* elementary-icon-theme
-</pre>
+``` bash
+sudo yum install google-droid* elementary-icon-theme
+```
 
 The first one will give you the &#8220;Droid Sans&#8221; font and the other will give you another icon set. Both of these are used by Xubuntu.
 
 The last step is changing some settings.
 
 Navigate to Settings->Settings Manager->Appearance.
-  
+
 In the style tab change the style to &#8220;Greybird&#8221;.
-  
+
 In the icons tab change the icon to &#8220;elementary Dark&#8221;.
-  
+
 In the fonts tab, change the font to &#8220;Droid Sans&#8221; with size 10, check &#8220;Enable anti-aliasing&#8221;, change the hinting value to &#8220;Slight&#8221; (or whatever fits your needs), the sub-pixel order to &#8220;RGB&#8221; (or whatever fits your need), check &#8220;Custom DPI setting&#8221; and set its value to 96.
-  
+
 In the settings tab you need to check &#8220;Show images buttons&#8221; and &#8220;Show images menus&#8221;.
 
 Navigate to Settings->Settings Manager->Window Manager.
-  
+
 In the style tab you need to change the theme to &#8220;Greybird&#8221; and set the title font to &#8220;Droid Sans Bold&#8221; with size 9.
 
 Basically that&#8217;s it. Next you can adjust the panel&#8217;s to your needs and/or adjust whatever themes and settings you like.
 
 If you still have the feeling that your fonts do not look proper in your browser and other applications, you can install [Infinality](http://www.infinality.net/):
 
-<pre class="brush: bash; title: ; notranslate" title="">sudo rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm
+``` bash
+sudo rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm
 sudo yum install freetype-infinality fontconfig-infinality
-</pre>
+```
 
 Note: Currently there&#8217;s no repo for Fedora 19. In order to install, you have to temporarily replace &#8220;$releaseserver&#8221; by &#8220;18&#8221; in &#8220;/etc/yum.repos.d/infinality.repo&#8221;.
 

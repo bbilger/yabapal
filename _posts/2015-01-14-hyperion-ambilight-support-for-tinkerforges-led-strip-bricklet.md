@@ -18,7 +18,8 @@ After you installed Hyperion, as described <a title="Hyperion Installation Gui
 
 <!--more-->
 
-<pre class="brush: jscript; title: ; notranslate" title="">{
+``` json
+{
 ...
         "device" :
         {
@@ -32,7 +33,7 @@ After you installed Hyperion, as described <a title="Hyperion Installation Gui
         },
 ...
 }
-</pre>
+```
 
   * name(string): leave it as it is
   * type(string): make sure to use &#8220;tinkerforge&#8221; //mandatory

@@ -40,42 +40,46 @@ To make sure that we are on the same page, here&#8217;s an example:
 ##### messages.csv
 
 [<img class="alignnone size-full wp-image-96" alt="table" src="http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png?resize=230%2C86" data-recalc-dims="1" />](http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png)
-  
+
 or rather
 
-<pre class="brush: plain; title: ; notranslate" title="">"key";"en";"de"
+```
+"key";"en";"de"
 "hello";"Hello";"Hallo"
 "world";"World";"Welt"
-</pre>
+```
 
 #### Output
 
 ##### messages.properties
 
-<pre class="brush: plain; title: ; notranslate" title=""># auto-generated on Fri Apr 26 20:42:01 2013
+```
+# auto-generated on Fri Apr 26 20:42:01 2013
 
 hello=Hello
 world=World
-</pre>
+```
 
 ##### messages_de.properties
 
-<pre class="brush: plain; title: ; notranslate" title=""># auto-generated on Fri Apr 26 20:42:01 2013
+```
+# auto-generated on Fri Apr 26 20:42:01 2013
 
 hello=Hallo
 world=Welt
-</pre>
+```
 
 ##### Messages.java
 
-<pre class="brush: java; title: ; notranslate" title="">package org.bbilger.util;
+``` java
+package org.bbilger.util;
 
 // auto-generated on Fri Apr 26 20:42:01 2013
 public final class Messages {
 	public final static String HELLO = "hello";
 	public final static String WORLD = "world";
 }
-</pre>
+```
 
 # Setup
 
@@ -129,7 +133,8 @@ What is the script doing:
 
 <span id="script"> </span>
 
-<pre class="brush: perl; title: ; notranslate" title="">use strict;
+``` perl
+use strict;
 use warnings;
 use Text::CSV_XS;
 
@@ -188,7 +193,7 @@ for my $key (@keys) {
 	print $fh "\tpublic final static String ".(uc $key)." = \"".$key."\";\n";
 }
 print $fh "}";
-</pre>
+```
 
 # Screenshots {#screenshots}
 

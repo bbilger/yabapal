@@ -79,14 +79,15 @@ Create a task to start ADB-over-WiFi:
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
   5. Save the task.
 
-<pre class="brush: bash; title: ; notranslate" title="">svc wifi enable
+``` bash
+svc wifi enable
 input keyevent 26
 sleep 10
 input keyevent 26
 setprop service.adb.tcp.port 5555
 stop adbd
 start adbd
-</pre>
+```
 
 Snippet explanation: In the first line we enable WiFi. The next fakes pushing the power button and thereby wakes the device which is necessary in order to really enable WiFi. Then we wait 10 seconds and press the power button again. The last three lines enable the ADB service on port 5555. You can, however, change it to another port, if you like to.
 
@@ -98,11 +99,13 @@ Create a task to stop ADB-over-WiFi:
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
   5. Save the task.
 
-<pre class="brush: bash; title: ; notranslate" title="">setprop service.adb.tcp.port -1
+``` bash
+setprop service.adb.tcp.port -1
 stop adbd
 start adbd
 svc wifi disable
-</pre>
+```
+
 
 Snippet explanation: The first three lines disable the ADB service and the fourth disables WiFi, again. The script is simply the counterpart of the first one.
 
@@ -116,7 +119,8 @@ Download the <a title="http://developer.android.com/sdk/index.html" href="http:
 
 The first necessary script is the one below. It simply tries to connect to the Android device and pushes all files/folders from the passed directory to it. After each run the pushed files will be deleted and backed up into another folder (&#8220;\_adb\_push_backup&#8221;) in the same directory until the next execution.
 
-<pre class="brush: perl; title: ; notranslate" title="">#!/usr/bin/perl
+``` perl
+#!/usr/bin/perl
 use strict;
 use warnings;
 
@@ -174,14 +178,15 @@ system("$adb disconnect $androidDeviceIdPort");
 system("mkdir $localPath/$BACK_UP_FOLDER");
 # move files and folders to the backup folder
 system("find $localPath -maxdepth 1 -mindepth 1 -not -name $BACK_UP_FOLDER -print0 | xargs -0 mv -t $backupPath");
-</pre>
+```
 
 Save the script e.g. under &#8220;$HOME/scripts/adb_push.pl&#8221; and make the script executable.
 
 You can start the script as follows:
 
-<pre class="brush: bash; title: ; notranslate" title="">perl /home/user/scripts/adb_push.pl 192.168.2.101:5555 /home/user/android_push /mnt/sdcard/Download /home/user/android-sdks/platform-tools/adb
-</pre>
+``` bash
+perl /home/user/scripts/adb_push.pl 192.168.2.101:5555 /home/user/android_push /mnt/sdcard/Download /home/user/android-sdks/platform-tools/adb
+```
 
 The parameters are defined as follows:
 
@@ -245,7 +250,8 @@ Since the parameters to crawl a page are very dependent on the page, I can only 
 
 Currently I am using the following script for crawling. I am publishing it here, in the hope you can use it as template for your solution. You simply have to adapt the URLs, the depths and the additional options. Finding the right values for the two last-mentioned parameters might take some time. So try&error, as always 😉 You can, however, call httrack directly.
 
-<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+``` bash
+#!/bin/bash
 
 OUTPUT="/home/user/android_push/"
 # make sure to use a mobile agent, in order to get the mobile site
@@ -314,7 +320,7 @@ site="${SITE_URL_HASH["$dir"]}"
 done
 
 wait # wait until all crawlers have finished
-</pre>
+```
 
 In order to crawl the pages automatically, you can create a cron job for your crawler script or glue it together with the adb push script.
 
@@ -340,13 +346,14 @@ Start FreetuxTV via the commandline and select the transcoding option of your ch
 Eample output:
 
 > [LibVLC-Gtk] INFO : Playing <your stream>
-  
+
 > [LibVLC-Gtk] INFO : Using vlc options [:sout=#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst=&#8221;/home/user/android_push/<stream name><date>.ogg&#8221;},dst=display}]
 
 We can now use this as a template to record a stream using vlc:
 
-<pre class="brush: bash; title: ; notranslate" title="">cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst="/home/user/android_push/&lt;name&gt;.ogg"}}'
-</pre>
+``` bash
+cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst="/home/user/android_push/&lt;name&gt;.ogg"}}'
+```
 
 Make sure to remove _&#8220;#sout&#8221;,  &#8220;,dst=display&#8221; , &#8220;[&#8221; and &#8220;]&#8221; _from the options and enclose the options for the vlc call with single quotes.
 
@@ -354,7 +361,8 @@ Update: Don&#8217;t use the stream&#8217;s URL from the command line, but from t
 
 What&#8217;s missing, is the ability to stop the stream dumping after some time. A simple bash script &#8220;runfor&#8221; that can do this for us:
 
-<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+``` bash
+#!/bin/bash
 
 TIME=$1
 shift # remove 1st param from args
@@ -364,12 +372,13 @@ PID=$!
 sleep $TIME # wait
 kill $PID # kill the started program / process
 wait
-</pre>
+```
 
 So the VLC call changes to this:
 
-<pre class="brush: bash; title: ; notranslate" title="">runfor 10m cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst="/home/user/android_push/&lt;name&gt;.ogg"}}'
-</pre>
+``` bash
+runfor 10m cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst="/home/user/android_push/&lt;name&gt;.ogg"}}'
+```
 
 Change the 1st parameter (10m) to whatever time, you like to dump the stream for. Finally you can add that call into your crontab.
 
