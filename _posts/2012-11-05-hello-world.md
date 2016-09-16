@@ -1,0 +1,37 @@
+---
+id: 1
+title: Hello world!
+date: 2012-11-05T22:16:34+00:00
+author: Björn Bilger
+layout: post
+guid: https://bbilger.com/yabapal/?p=1
+permalink: /2012/11/05/hello-world/
+categories:
+  - Uncategorized
+---
+# What&#8217;s this?
+
+This is yet another blog about programming and linux.
+
+# Really, yet another blog about this?
+
+Yes, I just had the feeling that some of the things I waste my time with are worth sharing.
+
+# What can I expect?
+
+Well, all the topics I currently waste my time with:
+
+  * Programming
+      * mostly Java
+          * Spring
+          * Java SE
+          * Java EE (JSF, JPA, &#8230;)
+          * Eclipse
+      * Perl
+      * &#8230;
+  * Linux
+  * Android
+
+# Who are you?
+
+Björn Bilger, a software engineer from Germany.
