@@ -28,7 +28,7 @@ I disconnected the USB stick from my RPi, connected it to my Linux-PC and ran th
 
 {% highlight bash linenos %}
 {% raw %}
-#replace sdd1 with your specific device
+\#replace sdd1 with your specific device
 fsck.ext4 -y /dev/sdd1
 {% endraw %}
 {% endhighlight %}
