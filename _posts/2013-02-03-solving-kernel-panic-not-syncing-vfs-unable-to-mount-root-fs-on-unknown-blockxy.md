@@ -27,7 +27,7 @@ I tried to get some information about the error in the context of RPi. Most peop
 I disconnected the USB stick from my RPi, connected it to my Linux-PC and ran the following command:
 
 {% highlight bash linenos %}
-#replace sdd1 with your specific device
+replace sdd1 with your specific device
 fsck.ext4 -y /dev/sdd1
 {% endhighlight %}
 
