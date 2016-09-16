@@ -26,9 +26,10 @@ I tried to get some information about the error in the context of RPi. Most peop
 
 I disconnected the USB stick from my RPi, connected it to my Linux-PC and ran the following command:
 
-<pre class="brush: bash; title: ; notranslate" title="">#replace sdd1 with your specific device
+{% highlight bash linenos %}
+#replace sdd1 with your specific device
 fsck.ext4 -y /dev/sdd1
-</pre>
+{% endhighlight %}
 
 This fixed the file system and I was able to boot my RPi with that USB stick, again.
 
@@ -36,7 +37,8 @@ If you installed your system to your RPi's SD card, the solution should work, to
 
 In order to avoid the problem, you should always shutdown your RPi via ssh:
 
-<pre class="brush: bash; title: ; notranslate" title="">sudo shutdown -h now
-</pre>
+``` bash
+sudo shutdown -h now
+```
 
 If you can not connect via ssh, another solution might be to buy an USB stick with a built-in LED, indicating read/write access. If the LED is off, it should be possible to pull the plug relatively safely. This method, however, is not very reliable. You should use it only in case the first method is not possible. I only use it, in case the RPi's ssh daemon died or is inaccessible for another reason.
