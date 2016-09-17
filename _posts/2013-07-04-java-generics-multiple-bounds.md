@@ -69,7 +69,7 @@ So those examples won't compile:
 
 With this neat &#8220;trick&#8221; it is possible to
 
-  1. Avoid code duplicity.
+  1. Avoid code duplication.
   2. Reduce code complexity.
   3. Avoid intermediate interfaces, if the classes are your own.
   4. Avoid implicit requirements like &#8220;a caller has to call two or more methods consecutively on an interface&#8221;. Avoiding this is somewhat essential in order to design good interfaces!
