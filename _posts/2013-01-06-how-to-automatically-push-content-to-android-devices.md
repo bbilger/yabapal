@@ -33,7 +33,7 @@ A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many ta
   1. tethering my smartphone to the tablet
   2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en)
 
-I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it&#8217;s simply too much work early in the morning&#8230;
+I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it's simply too much work early in the morning&#8230;
 
 The disadvantage of the second is that I don't want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
 
@@ -60,7 +60,7 @@ Some prerequisites, that are necessary in order to use the solution:
   * A **rooted** Android device. Else enabling/disabling ADB-over-WiFi won't work.
   * The [Android SDK](http://developer.android.com/sdk/index.html)
   * The app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en), which is necessary in order to enable/disable ADB-over-WiFi.
-  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device's MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router&#8217;s web-interface.
+  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device's MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router's web-interface.
   * Some time, because it's a &#8220;nerdy&#8221; solution 😉
 
 # **Solution**
@@ -113,7 +113,7 @@ Snippet explanation: The first three lines disable the ADB service and the four
 
 Finally switch to the &#8220;Cron&#8221; tab, check &#8220;Auto Restart&#8221; (enable jobs on reboot) and press &#8220;Start&#8221;. Pressing &#8220;Start&#8221; is necessary each time you add/enable a new task &#8211; just in case you want to add more cron jobs.
 
-That's it on the device. Let&#8217;s go on with the PC side.
+That's it on the device. Let's go on with the PC side.
 
 ## Setup on PC
 
@@ -246,7 +246,7 @@ Since the parameters to crawl a page are very dependent on the page, I can only 
 
   1. <span style="line-height: 14px;">make sure to set a mobile user agent (&#8220;-F <mobile user agent>&#8221;)</span>
   2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
-  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won&#8217;t be able to crawl/read articles that spread over several pages.
+  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
   4. &#8220;&#8211;depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
   5. Search the internet or the httrack forum. If you are lucky you will find the perfect parameters to crawl your page.
 
@@ -331,7 +331,7 @@ In order to crawl the pages automatically, you can create a cron job for your cr
 In order to use the websites on your Android device you'll need two additional Apps:
 
   1. A file browser in order to navigate to the files.
-  2. A browser. Yes, you need a browser, because you can't open HTML files from your device&#8217;s storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
+  2. A browser. Yes, you need a browser, because you can't open HTML files from your device's storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
 As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
@@ -339,7 +339,7 @@ As an alternative you can navigate to the index.html file with &#8220;file://&#8
 
 Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget).
 
-What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it's sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
+What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it's sometimes a bit difficult to get the stream's URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won't play properly on mobile devices &#8211; at least on mine.
 
 So it is easier and more efficient to use [VLC](http://en.wikipedia.org/wiki/VLC_media_player) in conjunction with the tool [FreetuxTV](ttp://code.google.com/p/freetuxtv/). VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here: [http://database.freetuxtv.net](http://database.freetuxtv.net)) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
 
@@ -359,7 +359,7 @@ cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acod
 
 Make sure to remove `#sout`,  `,dst=display` , `[` and `]` from the options and enclose the options for the vlc call with single quotes.
 
-Update: Don't use the stream&#8217;s URL from the command line, but from the stream&#8217;s properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
+Update: Don't use the stream's URL from the command line, but from the stream's properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
 
 What's missing, is the ability to stop the stream dumping after some time. A simple bash script `runfor` that can do this for us:
 
