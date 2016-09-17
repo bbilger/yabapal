@@ -22,7 +22,7 @@ Yesterday I changed the cabling of my media center and forgot to shut down my RP
 
 > Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(x,y)
 
-I tried to get some information about the error in the context of RPi. Most people suggested to re-install the entire system. Even though it doesn't take too much time to re-install the system, re-configuring it does. Since re-installing the system wasn't an option for me, I searched for other solutions and found the tool &#8220;fsck.ext4&#8221;.
+I tried to get some information about the error in the context of RPi. Most people suggested to re-install the entire system. Even though it doesn't take too much time to re-install the system, re-configuring it does. Since re-installing the system wasn't an option for me, I searched for other solutions and found the tool `fsck.ext4`.
 
 I disconnected the USB stick from my RPi, connected it to my Linux-PC and ran the following command:
 

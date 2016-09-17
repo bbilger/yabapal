@@ -14,7 +14,7 @@ Wow, it's been a while since my last post. I totally forgot to mention that I ad
 
 For those of you who don't know Hyperion, yet: It's an 'Ambilight' implementation that in contrast to the original [boblight](https://code.google.com/p/boblight/) runs quite fast on the Raspberry Pi (RPi). It supports [Raspbmc](http://raspbmc.com/), [XBian](http://xbian.org/) and [OpenELEC](http://openelec.tv/) but it is not limited to those Linux distributions specialized on letting XBMC/Kodi run on the RPi.
 
-After you installed Hyperion, as described [here](https://github.com/tvdzwan/hyperion/wiki/installation), you need a configuration. You can create the configuration file with a tool called [HyperionCon](https://raw.github.com/tvdzwan/hypercon/master/deploy/HyperCon.jar) (more details can be found [Hyperion Configuration](https://github.com/tvdzwan/hyperion/wiki/configuration)). This tool, however, does not support the Tinkerforge device. This means you need to edit the &#8220;device&#8221; section of your hyperion.config.json manually.
+After you installed Hyperion, as described [here](https://github.com/tvdzwan/hyperion/wiki/installation), you need a configuration. You can create the configuration file with a tool called [HyperionCon](https://raw.github.com/tvdzwan/hypercon/master/deploy/HyperCon.jar) (more details can be found [Hyperion Configuration](https://github.com/tvdzwan/hyperion/wiki/configuration)). This tool, however, does not support the Tinkerforge device. This means you need to edit the **device** section of your hyperion.config.json manually.
 
 <!--more-->
 
@@ -36,14 +36,14 @@ After you installed Hyperion, as described [here](https://github.com/tvdzwan/h
 ```
 
   * name(string): leave it as it is
-  * type(string): make sure to use &#8220;tinkerforge&#8221; //mandatory
+  * type(string): make sure to use **tinkerforge** //mandatory
   * output(string): the IP of the device where you connected your Master Brick to/where [brick daemon](http://www.tinkerforge.com/doc/Software/Brickd.html) is running at //optional; default: 127.0.0.1
   * port(int): the port your [brick daemon](http://www.tinkerforge.com/doc/Software/Brickd.html) is running at //optional; default: 4223
   * uid(string): the UID of your LED Strip Bricklet //mandatory; you can find it out via Brick Viewer
   * colorOrder(string): you can change the colorOrder if you have problems //optional; default rgb
   * rate(int): the frame duration //mandatory; <frame duration>= 1 / FPS; note there's some bug => make sure to set this value!!!
 
-Note 1: at the moment only &#8220;WS2801&#8221; is supported
+Note 1: at the moment only **WS2801** is supported
 
 Note 2: Unfortunately my pull request has been merged into Hyperion without a dependency on <https://github.com/bbilger/libtinkerforge>. If you are interested into the one with that dependency, then check out: <https://github.com/bbilger/add_tinkerforge>
 

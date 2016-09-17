@@ -54,15 +54,15 @@ This is just what I am using for. It is not restricted to RPi/XMBC. You can exec
 
 Install [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand) on your android device.
 
-Open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm), switch to the &#8220;Tasks&#8221; tab, click on the plus sign and enter some name for your task.
+Open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm), switch to the **Tasks** tab, click on the plus sign and enter some name for your task.
 
 [<img class="alignnone  wp-image-118" alt="24923" src="http://i2.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24923.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i2.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24923.png?ssl=1)
 
-In the next screen, select Plugin and then SSH Command. Then you can set up the command by clicking on the Edit button. The screen shows one of my tasks and should be self explanatory. You need to provide a password only in case you stick to the User/Pass Auth Type. The section &#8220;Connection via public/private key&#8221; below provides the necessary steps to use a key file (Auth Type = Keyfile).
+In the next screen, select Plugin and then SSH Command. Then you can set up the command by clicking on the Edit button. The screen shows one of my tasks and should be self explanatory. You need to provide a password only in case you stick to the User/Pass Auth Type. The section **Connection via public/private key** below provides the necessary steps to use a key file (Auth Type = Keyfile).
 
 [<img class="alignnone  wp-image-120" alt="24948" src="http://i0.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24948.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i0.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24948.png?ssl=1)
 
-Once you are done, click on &#8220;Done&#8221; in the upper right corner. In the next screen click on the &#8220;Action Edit&#8221; button in the upper left corner.
+Once you are done, click on **Done** in the upper right corner. In the next screen click on the **Action Edit** button in the upper left corner.
 
 In the next screen, click on the grid in the lower right corner, in order to select an icon (you can use your own, built-in ones, application icons, etc.).
 
@@ -74,7 +74,7 @@ Now you can go to the widget selection page and drag the Task widget on one of y
 
 [<img class="alignnone  wp-image-122" alt="24928" src="http://i1.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24928.png?resize=288%2C461&#038;ssl=1" data-recalc-dims="1" />](http://i1.wp.com/bbilger.com/yabapal/wp-content/uploads/2013/06/24928.png?ssl=1)
 
-This will open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) again. Select your task from the list (e.g. Stop 30). Make sure to click on &#8220;Task&#8221; in the upper right corner, again. If you click on Cancel, Back or Home, the widget won't get created.
+This will open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) again. Select your task from the list (e.g. Stop 30). Make sure to click on **Task** in the upper right corner, again. If you click on Cancel, Back or Home, the widget won't get created.
 
 If everything went well, you'll now have the task's icon on one of your home screens and you should be able to execute your specified command on your remote machine. Don't forget that it takes some seconds until the command gets send.
 
@@ -127,7 +127,7 @@ I am using it for example to start a radio streams (.pls).
 
 You might wonder about line 3 and 4 in the script. If I do not stop playback and don't wait for a second, then my RPi or rather [Raspbmc](http://www.raspbmc.com/) will crash. So this is a workaround to avoid a crash by delaying playback of the next resource. It might be that you don't have those problems and maybe it's specific to [Raspbmc](http://www.raspbmc.com/), only.
 
-In case you want to execute some plugin functionality, remotely, then you should check ~/.xmbc/xbmc.log. This is especially usefuly, when you want to know which streams or resource is opened. Check for this line &#8220;COMXPlayer: Opening: ...&#8221;.
+In case you want to execute some plugin functionality, remotely, then you should check ~/.xmbc/xbmc.log. This is especially usefuly, when you want to know which streams or resource is opened. Check for this line **COMXPlayer: Opening: ...**.
 
 Note: If you only want to use all this for controlling XBMC, then instead of using ssh, you could also use [XBMC's REST API](http://wiki.xbmc.org/index.php?title=JSON-RPC_API) and utilize the [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) plugin [RESTask for Tasker](https://play.google.com/store/apps/details?id=com.freehaha.restask) to access it.
 

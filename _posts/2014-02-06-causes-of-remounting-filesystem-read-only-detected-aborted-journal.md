@@ -9,7 +9,7 @@ permalink: /2014/02/06/causes-of-remounting-filesystem-read-only-detected-aborte
 categories:
   - Raspberry Pi
 ---
-I just bought another RPi (for some home automation project) and had some tough time setting it up. The issue was that it constantly died with some error which resulted in &#8220;Detected aborted journal&#8221; or rather &#8220;Remounting filesystem read-only&#8221; making it necessary to restart and fix the filesystem with fcsk. It was simply impossible to install new packages or update the firmware.
+I just bought another RPi (for some home automation project) and had some tough time setting it up. The issue was that it constantly died with some error which resulted in **Detected aborted journal** or rather **Remounting filesystem read-only** making it necessary to restart and fix the filesystem with fcsk. It was simply impossible to install new packages or update the firmware.
 
 I did some research and the suggested solutions were to buy a better power supply but the supplied power was ok - well, finally I bought a new one, but it still did not work. I tweaked some settings in config.txt but again it did not work.
 

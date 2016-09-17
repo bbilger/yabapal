@@ -39,7 +39,7 @@ For simplicity we will use the following structure to include jQuery Mobile Ico
         jqm-icon-pack-3.0.0-fa.css</pre>
 ```
 
-If this worked, I wouldn't have written this post. The problem is that &#8220;jqm-icon-pack-3.0.0-fa.css&#8221; cannot find the fonts and images. This is because the requests from the client are relative to the request path of the CSS file. The requests look like that:
+If this worked, I wouldn't have written this post. The problem is that `jqm-icon-pack-3.0.0-fa.css` cannot find the fonts and images. This is because the requests from the client are relative to the request path of the CSS file. The requests look like that:
 
 `http://.../javax.faces.resource/font/fontawesome-webfont.woff`
 
@@ -47,7 +47,7 @@ But they must look like that:
 
 `http://.../javax.faces.resource/font/fontawesome-webfont.woff.jsf?ln=css`
 
-So the solution to this problem is to fix those requests. This can either be done by rewriting the requests with UrlRewriteFilter, for example, or by &#8220;patching&#8221; jqm-icon-pack-3.0.0-fa.css&#8221;. We want to patch the CSS file. In order to fix the requests we have to replace **all** &#8220;relative&#8221; url references.
+So the solution to this problem is to fix those requests. This can either be done by rewriting the requests with UrlRewriteFilter, for example, or by *patching* `jqm-icon-pack-3.0.0-fa.css`. We want to patch the CSS file. In order to fix the requests we have to replace **all** `relative` url references.
 
 So we replace for instance:
 
@@ -82,7 +82,7 @@ In addition you should define proper MIME types for the font files. This can be 
 
 Note: There aren't standardized MIME types for those files and there are a lot of debates on which MIME types are the best for those files. So feel free to use different ones.
 
-This fixes the extended images of the icon pack, only, but Font Awesome icons still won't show up. The reason is that PrimeFaces uses jQuery UI and jQuery UI interferes with jQuery Mobile used by PrimeFaces Mobile. The problem is that both use the CSS class &#8220;ui-icon&#8221;. With a simple CSS rule, we can fix that problem:
+This fixes the extended images of the icon pack, only, but Font Awesome icons still won't show up. The reason is that PrimeFaces uses jQuery UI and jQuery UI interferes with jQuery Mobile used by PrimeFaces Mobile. The problem is that both use the CSS class `ui-icon`. With a simple CSS rule, we can fix that problem:
 
 ``` css
 .ui-btn-inner > .ui-icon {
@@ -92,7 +92,7 @@ This fixes the extended images of the icon pack, only, but Font Awesome icons s
 
 Now the Font Awesome icons will show up, too.
 
-There's one last issue, I had with icons positioned to the top, using &#8220;jqm-icon-pack-3.0.0-fa.css&#8221;. The margin was set to a wrong value. I think that this cannot be fixed with some CSS, so I fixed the following &#8220;.ui-icon&#8221; rule in &#8220;jqm-icon-pack-3.0.0-fa.css&#8221; by removing the declaration &#8220;margin-top:-10px !important;&#8221;.
+There's one last issue, I had with icons positioned to the top, using `jqm-icon-pack-3.0.0-fa.css`. The margin was set to a wrong value. I think that this cannot be fixed with some CSS, so I fixed the following `.ui-icon` rule in `jqm-icon-pack-3.0.0-fa.css` by removing the declaration `margin-top:-10px !important;`.
 
 If you followed the steps in this posting, the following example page should show up properly.
 
@@ -119,6 +119,6 @@ If you followed the steps in this posting, the following example page should sho
 </f:view>
 ```
 
-Note: &#8220;fixes.css&#8221; contains the &#8220;text-indent&#8221; fix, shown above.
+Note: `fixes.css` contains the `text-indent` fix, shown above.
 
 Hope this helps!

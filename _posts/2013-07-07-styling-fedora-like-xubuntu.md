@@ -33,23 +33,23 @@ Next you need to install two packages:
 sudo yum install google-droid* elementary-icon-theme
 ```
 
-The first one will give you the &#8220;Droid Sans&#8221; font and the other will give you another icon set. Both of these are used by Xubuntu.
+The first one will give you the **Droid Sans** font and the other will give you another icon set. Both of these are used by Xubuntu.
 
 The last step is changing some settings.
 
 Navigate to Settings->Settings Manager->Appearance.
 
-In the style tab change the style to &#8220;Greybird&#8221;.
+In the style tab change the style to **Greybird**.
 
-In the icons tab change the icon to &#8220;elementary Dark&#8221;.
+In the icons tab change the icon to **elementary Dark**.
 
-In the fonts tab, change the font to &#8220;Droid Sans&#8221; with size 10, check &#8220;Enable anti-aliasing&#8221;, change the hinting value to &#8220;Slight&#8221; (or whatever fits your needs), the sub-pixel order to &#8220;RGB&#8221; (or whatever fits your need), check &#8220;Custom DPI setting&#8221; and set its value to 96.
+In the fonts tab, change the font to **Droid Sans** with size 10, check **Enable anti-aliasing**, change the hinting value to **Slight** (or whatever fits your needs), the sub-pixel order to **RGB** (or whatever fits your need), check **Custom DPI setting** and set its value to 96.
 
-In the settings tab you need to check &#8220;Show images buttons&#8221; and &#8220;Show images menus&#8221;.
+In the settings tab you need to check **Show images buttons** and **Show images menus**.
 
 Navigate to Settings->Settings Manager->Window Manager.
 
-In the style tab you need to change the theme to &#8220;Greybird&#8221; and set the title font to &#8220;Droid Sans Bold&#8221; with size 9.
+In the style tab you need to change the theme to **Greybird** and set the title font to **Droid Sans Bold** with size 9.
 
 Basically that's it. Next you can adjust the panel's to your needs and/or adjust whatever themes and settings you like.
 
@@ -60,7 +60,7 @@ sudo rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarc
 sudo yum install freetype-infinality fontconfig-infinality
 ```
 
-Note: Currently there's no repo for Fedora 19. In order to install, you have to temporarily replace &#8220;$releaseserver&#8221; by &#8220;18&#8221; in &#8220;/etc/yum.repos.d/infinality.repo&#8221;.
+Note: Currently there's no repo for Fedora 19. In order to install, you have to temporarily replace **$releaseserver** by **18** in `/etc/yum.repos.d/infinality.repo`.
 
 Even if you are fine with your current font rendering, it's really worth giving [Infinality](http://www.infinality.net/) a try! Fonts are amazingly crisp; it's even better than on Ubuntu by default and probably better or at least as good as on Windows.
 

@@ -49,7 +49,7 @@ Since for security reasons it is a bad idea to leave ADB-over-WiFi enabled all t
 
 Last but not least, we need some scripts that generate the content for us. I will cover how to fetch websites and videos.
 
-# **Prerequisites**
+# Prerequisites
 
 Some prerequisites, that are necessary in order to use the solution:
 
@@ -58,10 +58,10 @@ Some prerequisites, that are necessary in order to use the solution:
   * A **rooted** Android device. Else enabling/disabling ADB-over-WiFi won't work.
   * The [Android SDK](http://developer.android.com/sdk/index.html)
   * The app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en), which is necessary in order to enable/disable ADB-over-WiFi.
-  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device's MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router's web-interface.
-  * Some time, because it's a &#8220;nerdy&#8221; solution 😉
+  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device's MAC address (e.g. Settings->About ->Status: Wi-Fi MAX address) to a local IP via your router's web-interface.
+  * Some time, because it's a *nerdy* solution 😉
 
-# **Solution**
+# Solution
 
 Let's start setting up the solution.
 
@@ -69,12 +69,12 @@ Let's start setting up the solution.
 
 We begin with the Android device.
 
-Install the app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en) and open it. Go to the tab &#8220;Tasks&#8221; and add a task via the menu in that view.
+Install the app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en) and open it. Go to the tab **Tasks** and add a task via the menu in that view.
 
 Create a task to start ADB-over-WiFi:
 
-  1. Enter a name e.g. &#8220;start adb wifi&#8221;
-  2. Check &#8220;Active&#8221;
+  1. Enter a name e.g. *start adb wifi*
+  2. Check **Active**
   3. Enter a cron expression in the second text field. For example `0 7 \* \* 1,2,3,4,5`, in order to start the task on weekdays at 7 o'clock. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android's word completion is a bit annoying here.
   5. Save the task.
@@ -93,8 +93,8 @@ Snippet explanation: In the first line we enable WiFi. The next fakes pushing th
 
 Create a task to stop ADB-over-WiFi:
 
-  1. Enter a name e.g. &#8220;stop adb wifi&#8221;
-  2. Check &#8220;Active&#8221;
+  1. Enter a name e.g. *stop adb wifi*
+  2. Check **Active**
   3. Enter a cron expression in the second text field. For example `10 7 \* \* 1,2,3,4,5`, in order to stop WiFi and the ADB service ten minutes later, again. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android's word completion is a bit annoying here.
   5. Save the task.
@@ -109,7 +109,7 @@ svc wifi disable
 
 Snippet explanation: The first three lines disable the ADB service and the fourth disables WiFi, again. The script is simply the counterpart of the first one.
 
-Finally switch to the &#8220;Cron&#8221; tab, check &#8220;Auto Restart&#8221; (enable jobs on reboot) and press &#8220;Start&#8221;. Pressing &#8220;Start&#8221; is necessary each time you add/enable a new task - just in case you want to add more cron jobs.
+Finally switch to the **Cron** tab, check **Auto Restart** (enable jobs on reboot) and press **Start**. Pressing **Start** is necessary each time you add/enable a new task - just in case you want to add more cron jobs.
 
 That's it on the device. Let's go on with the PC side.
 
@@ -214,10 +214,10 @@ Android side:
   1. disable WiFi
   2. open Cron4Phone
   3. navigate to the `Tasks` tab
-  4. long press on the task that starts ADB-over-WiFi (e.g. &#8220;start adb over wifi&#8221;)
+  4. long press on the task that starts ADB-over-WiFi (e.g. *start adb over wifi*)
   5. confirm execution
   6. grant super user rights (always)
-  7. wait **Attention:** there seems to be some bug in the app, because it needs longer than 10 seconds for the screen to come back and Android says that the app does not respond. Just ignore this and press &#8220;OK&#8221; or &#8220;Wait&#8221;. The problem only exists when executing it manually, but not when the app triggers execution.
+  7. wait **Attention:** there seems to be some bug in the app, because it needs longer than 10 seconds for the screen to come back and Android says that the app does not respond. Just ignore this and press **OK** or **Wait**. The problem only exists when executing it manually, but not when the app triggers execution.
 
 After a few seconds the perl script should push the file and stop execution then. Verify that on your Android device. If you have any trouble here, then just leave a comment.
 
@@ -238,14 +238,14 @@ Now that all should be set up, let's take the final step: creating content! This
 
 ### Websites
 
-We are going to start with downloading entire websites (a.k.a. &#8220;crawling&#8221;) - at least to a certain depth. The software I am using for that purpose is &#8220;httrack&#8221;. The software is extremely powerful, and yet very tricky to use. Check the manpage or your search engine of choice for further information.
+We are going to start with downloading entire websites (a.k.a. *crawling*) - at least to a certain depth. The software I am using for that purpose is *httrack*. The software is extremely powerful, and yet very tricky to use. Check the manpage or your search engine of choice for further information.
 
 Since the parameters to crawl a page are very dependent on the page, I can only give you a few hints:
 
-  1. <span style="line-height: 14px;">make sure to set a mobile user agent (&#8220;-F <mobile user agent>&#8221;)</span>
+  1. <span style="line-height: 14px;">make sure to set a mobile user agent (`-F <mobile user agent>`)</span>
   2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
-  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;-depth 2&#8221; works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
-  4. &#8220;-depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
+  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. `-depth 2&` works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
+  4. `-depth 3` on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: `-\*blog\* -\*ticker\*`. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
   5. Search the internet or the httrack forum. If you are lucky you will find the perfect parameters to crawl your page.
 
 Currently I am using the following script for crawling. I am publishing it here, in the hope you can use it as template for your solution. You simply have to adapt the URLs, the depths and the additional options. Finding the right values for the two last-mentioned parameters might take some time. So try&error, as always 😉 You can, however, call httrack directly.
@@ -331,7 +331,7 @@ In order to use the websites on your Android device you'll need two additional A
   1. A file browser in order to navigate to the files.
   2. A browser. Yes, you need a browser, because you can't open HTML files from your device's storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
-As an alternative you can navigate to the index.html file with &#8220;file://...&#8221; or &#8220;file:///...&#8221;, depends... Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
+As an alternative you can navigate to the index.html file with `file://...` or `file:///...`, depends... Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
 ### Videos / Livestreams
 
@@ -341,7 +341,7 @@ What I was interested in, however, was to record live streams. Since most stream
 
 So it is easier and more efficient to use [VLC](http://en.wikipedia.org/wiki/VLC_media_player) in conjunction with the tool [FreetuxTV](ttp://code.google.com/p/freetuxtv/). VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here: [http://database.freetuxtv.net](http://database.freetuxtv.net)) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
 
-Start FreetuxTV via the commandline and select the transcoding option of your choice on the &#8220;Recordings&#8221; tab in the preferences. Now start to record the stream you like to dump. You can see the stream's URL and the VLC options in the command line, now.
+Start FreetuxTV via the commandline and select the transcoding option of your choice on the **Recordings** tab in the preferences. Now start to record the stream you like to dump. You can see the stream's URL and the VLC options in the command line, now.
 
 Eample output:
 
@@ -357,7 +357,7 @@ cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acod
 
 Make sure to remove `#sout`,  `,dst=display` , `[` and `]` from the options and enclose the options for the vlc call with single quotes.
 
-Update: Don't use the stream's URL from the command line, but from the stream's properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
+Update: Don't use the stream's URL from the command line, but from the stream's properties. The reason is that asx-streams redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
 
 What's missing, is the ability to stop the stream dumping after some time. A simple bash script `runfor` that can do this for us:
 
