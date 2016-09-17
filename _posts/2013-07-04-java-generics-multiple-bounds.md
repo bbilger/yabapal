@@ -25,18 +25,18 @@ Let's say we want to have a method that appends a newline character to either a 
 
 ``` java
 public void finishLine(StringBuffer str) {
-	int len = str.length();
-	char newline = '\n';
-	if (len == 0 || str.charAt(len-1) != newline) {
-		str.append(newline);
-	}
+  int len = str.length();
+  char newline = '\n';
+  if (len == 0 || str.charAt(len-1) != newline) {
+    str.append(newline);
+  }
 }
 public void finishLine(StringBuilder str) {
-	int len = str.length();
-	char newline = '\n';
-	if (len == 0 || str.charAt(len-1) != newline) {
-		str.append(newline);
-	}
+  int len = str.length();
+  char newline = '\n';
+  if (len == 0 || str.charAt(len-1) != newline) {
+    str.append(newline);
+  }
 }
 ```
 
@@ -44,15 +44,15 @@ Even though you could reduce code duplicity slightly with some refactoring, this
 
 ``` java
 public <T extends Appendable & CharSequence> void finishLine(T str) {
-	int len = str.length();
-	char newline = '\n';
-	if (len == 0 || str.charAt(len-1) != newline) {
-		try {
-			str.append(newline);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
+  int len = str.length();
+  char newline = '\n';
+  if (len == 0 || str.charAt(len-1) != newline) {
+    try {
+      str.append(newline);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
 }
 ```
 

@@ -76,8 +76,8 @@ package org.bbilger.util;
 
 // auto-generated on Fri Apr 26 20:42:01 2013
 public final class Messages {
-	public final static String HELLO = "hello";
-	public final static String WORLD = "world";
+  public final static String HELLO = "hello";
+  public final static String WORLD = "world";
 }
 ```
 
@@ -139,8 +139,8 @@ use warnings;
 use Text::CSV_XS;
 
 if (@ARGV != 4) {
-	die "Usage: perl messages_builder.pl    \n".
-		"perl messages_builder.pl '/somedir/src/main/resources' '/somedir/src/main/java/com/mypackage/Messages.java' 'Messages' 'com.mypackage'\n";
+  die "Usage: perl messages_builder.pl    \n".
+    "perl messages_builder.pl '/somedir/src/main/resources' '/somedir/src/main/java/com/mypackage/Messages.java' 'Messages' 'com.mypackage'\n";
 }
 
 my $messages_dir = $ARGV[0];
@@ -158,39 +158,39 @@ my @properties_lists = ();
 my @keys = ();
 
 foreach my $header (@$header_line) {
-	if ($header ne "") {
-		push(@headers, $header);
-		push(@properties_lists, []);
-	}
+  if ($header ne "") {
+    push(@headers, $header);
+    push(@properties_lists, []);
+  }
 }
 
 while (my $line = $csv-&gt;getline ($fh)) {
-	my @fields = @$line;
+  my @fields = @$line;
 
-	for (my $i = 0; $i &lt; @fields && $i &lt; @headers; $i++) {
-		my $field = $fields[$i];
-		if ($i == 0) {
-			push(@keys, $field);
-		} else {
-			push($properties_lists[$i], $field);
-		}
-	}
+  for (my $i = 0; $i &lt; @fields && $i &lt; @headers; $i++) {
+    my $field = $fields[$i];
+    if ($i == 0) {
+      push(@keys, $field);
+    } else {
+      push($properties_lists[$i], $field);
+    }
+  }
 }
 
 close $fh;
 
-for (my $i = 1; $i &lt; @headers; $i++) { 	my $header = $headers[$i]; 	my $properties_list = $properties_lists[$i]; 	my $prop_file = $messages_dir."/messages"; 	if ($header ne "en") { 		$prop_file .= "_".$header; 	} 	$prop_file .= ".properties"; 	open $fh, "&gt; :encoding(Latin1)", $prop_file or die "$prop_file: $!";
-	binmode($fh, ":encoding(Latin1)");
-	print $fh "# auto-generated on ".localtime."\n\n";
-	for (my $j = 0; $j &lt; @keys; $j++) {
-		my $message = "";
-		if ($j &lt; @$properties_list) {			 			$message = $$properties_list[$j]; 		} 		if ($message eq "") { 			 printf $fh "# "; 		} 		print $fh $keys[$j]."=".$message."\n"; 	} 	close $fh; } open $fh, "&gt; :encoding(utf8)", $messages_class_path or die "$messages_class_path: $!";
+for (my $i = 1; $i &lt; @headers; $i++) {   my $header = $headers[$i];   my $properties_list = $properties_lists[$i];   my $prop_file = $messages_dir."/messages";   if ($header ne "en") {     $prop_file .= "_".$header;   }   $prop_file .= ".properties";   open $fh, "&gt; :encoding(Latin1)", $prop_file or die "$prop_file: $!";
+  binmode($fh, ":encoding(Latin1)");
+  print $fh "# auto-generated on ".localtime."\n\n";
+  for (my $j = 0; $j &lt; @keys; $j++) {
+    my $message = "";
+    if ($j &lt; @$properties_list) {             $message = $$properties_list[$j];     }     if ($message eq "") {        printf $fh "# ";     }     print $fh $keys[$j]."=".$message."\n";   }   close $fh; } open $fh, "&gt; :encoding(utf8)", $messages_class_path or die "$messages_class_path: $!";
 binmode($fh, ":encoding(utf8)");
 print $fh "package ".$messages_class_package.";\n\n";
 print $fh "// auto-generated on ".localtime."\n";
 print $fh "public final class ".$messages_class_name." {\n";
 for my $key (@keys) {
-	print $fh "\tpublic final static String ".(uc $key)." = \"".$key."\";\n";
+  print $fh "\tpublic final static String ".(uc $key)." = \"".$key."\";\n";
 }
 print $fh "}";
 ```

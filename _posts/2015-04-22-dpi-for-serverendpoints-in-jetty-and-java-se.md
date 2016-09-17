@@ -18,10 +18,10 @@ I am currently working on some small private Java SE project that uses WebSocket
 ``` java
 @ServerEndpoint(value = "/")
 public class ServerEndpoint {
-	private ISomeDependentComponent someDependentComponent;
-	public ServerEndpoint(ISomeDependentComponent someDependentComponent) {
-		this.someDependentComponent = someDependentComponent;
-	}
+  private ISomeDependentComponent someDependentComponent;
+  public ServerEndpoint(ISomeDependentComponent someDependentComponent) {
+    this.someDependentComponent = someDependentComponent;
+  }
 }
 ```
 
@@ -52,27 +52,27 @@ We just need some ServerEndpointConfig:
 ``` java
 public class ServerEndpointInstanceFactory<T> implements ServerEndpointConfig {
 
-	private final Function<Class<T>, T> endpointFactory;
-	private final Class<T> clazz;
+  private final Function<Class<T>, T> endpointFactory;
+  private final Class<T> clazz;
 
-	public ServerEndpointBaseConfigInstanceFactory(Class<T> clazz, Function<Class<T>, T> endpointFactory) {
-		this.endpointFactory = endpointFactory;
-		this.clazz = clazz;
-	}
-	@Override
-	public Configurator getConfigurator() {
-		return new Configurator() {
-			@Override
-	        public <E> E getEndpointInstance(Class<E> endpointClass) throws InstantiationException {
-				return (E) endpointFactory.apply((Class<T>) endpointClass);
-	        }
-		};
-	}
-	@Override
-	public Class<?> getEndpointClass() {
-		return clazz;
-	}
-	//ommitted other methods; they just return null
+  public ServerEndpointBaseConfigInstanceFactory(Class<T> clazz, Function<Class<T>, T> endpointFactory) {
+    this.endpointFactory = endpointFactory;
+    this.clazz = clazz;
+  }
+  @Override
+  public Configurator getConfigurator() {
+    return new Configurator() {
+      @Override
+          public <E> E getEndpointInstance(Class<E> endpointClass) throws InstantiationException {
+        return (E) endpointFactory.apply((Class<T>) endpointClass);
+          }
+    };
+  }
+  @Override
+  public Class<?> getEndpointClass() {
+    return clazz;
+  }
+  //ommitted other methods; they just return null
 }
 ```
 
@@ -93,7 +93,7 @@ server.setHandler(context);
 ServerContainer wscontainer;
 wscontainer = WebSocketServerContainerInitializer.configureContext(context);
 wscontainer.addEndpoint(new ServerEndpointBaseConfigInstanceFactory<ServerEndpoint>(ServerEndpoint.class,
-	t -> new ServerEndpoint((condition) ? new SomeDependentComponentA() : new SomeDependentComponentB())));
+  t -> new ServerEndpoint((condition) ? new SomeDependentComponentA() : new SomeDependentComponentB())));
 ```
 
 [0]: I checked with annotated ServerEndpoints, only. I am not sure if this still works that way if your ServerEndpoint extends Endpoint.
