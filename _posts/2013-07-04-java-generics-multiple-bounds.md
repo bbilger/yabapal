@@ -1,6 +1,6 @@
 ---
 id: 167
-title: 'Java Generics &#8211; Multiple Bounds'
+title: 'Java Generics - Multiple Bounds'
 date: 2013-07-04T21:48:10+00:00
 author: Björn Bilger
 layout: post
@@ -15,7 +15,7 @@ tags:
 ---
 Even though I have written and read a lot of Java code during the last years, I recently read an interesting article about a feature I did not know about and also haven't seen yet: Multiple Bounds.
 
-Generics in Java are a quite essential feature and most use them in order to avoid compiler warnings. If you are using them for more than just parameterizing &#8211; for example &#8211; list objects, then things might get a little tricky. Still it's worth the effort since you can reduce code complexity and duplicity &#8211; I really loathe the latter one.
+Generics in Java are a quite essential feature and most use them in order to avoid compiler warnings. If you are using them for more than just parameterizing - for example - list objects, then things might get a little tricky. Still it's worth the effort since you can reduce code complexity and duplicity - I really loathe the latter one.
 
 One of those tricky things with generics is to make sure that a type implements two or more interfaces. If the classes implementing those interfaces are your own then this is not too much of a problem since you can form a new interface which implements all required interfaces. If the classes are not your own ones then you'll have a problem to avoid code duplicity.
 

@@ -19,7 +19,7 @@ My start into Linux/Unix began with Ubuntu and Gnome (2!). Since I neither liked
 
 Leaving aside all other aspects/differences for now, I was kind of shocked by the design of Fedora with Xfce. The reason is that Fedora's Xfce spin is using a vanilla version of Xfce. This vanilla version, even though arguable, is no delight to behold for me. I almost switched back to Xubuntu but decided to change the style instead and give it a fair try. So this guide will summarize the steps to give Fedora's Xfce spin Xubuntu's style and make it a delight to behold, again.
 
-There are a couple of guides/posts out there about exactly this but most seem to be outdated. Many of those posts are talking about downloading the packages from the ubuntu repository, downloading the themes, etc. This is, however, not necessary anymore. The themes are already installed and you just need to install a few packages via yum and change some settings. It's fairly simple &#8211; at least nowadays with Fedora 18/19.
+There are a couple of guides/posts out there about exactly this but most seem to be outdated. Many of those posts are talking about downloading the packages from the ubuntu repository, downloading the themes, etc. This is, however, not necessary anymore. The themes are already installed and you just need to install a few packages via yum and change some settings. It's fairly simple - at least nowadays with Fedora 18/19.
 
 So this is what I did:
 

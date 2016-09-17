@@ -10,9 +10,9 @@ categories:
   - Linux
   - Raspberry Pi
 ---
-Wow, it's been a while since my last post. I totally forgot to mention that I added support for [Tinkerforge](Tinkerforge" href="http://tinkerforge.com)&#8216;s [LED Strip Bricklet](http://tinkerforge.com/doc/Hardware/Bricklets/LED_Strip.html) to [Hyperion](https://github.com/tvdzwan/hyperion) &#8211; about 10 months, ago.
+Wow, it's been a while since my last post. I totally forgot to mention that I added support for [Tinkerforge](Tinkerforge" href="http://tinkerforge.com)'s [LED Strip Bricklet](http://tinkerforge.com/doc/Hardware/Bricklets/LED_Strip.html) to [Hyperion](https://github.com/tvdzwan/hyperion) - about 10 months, ago.
 
-For those of you who don't know Hyperion, yet: It's an &#8216;Ambilight' implementation that in contrast to the original [boblight](https://code.google.com/p/boblight/) runs quite fast on the Raspberry Pi (RPi). It supports [Raspbmc](http://raspbmc.com/), [XBian](http://xbian.org/) and [OpenELEC](http://openelec.tv/) but it is not limited to those Linux distributions specialized on letting XBMC/Kodi run on the RPi.
+For those of you who don't know Hyperion, yet: It's an 'Ambilight' implementation that in contrast to the original [boblight](https://code.google.com/p/boblight/) runs quite fast on the Raspberry Pi (RPi). It supports [Raspbmc](http://raspbmc.com/), [XBian](http://xbian.org/) and [OpenELEC](http://openelec.tv/) but it is not limited to those Linux distributions specialized on letting XBMC/Kodi run on the RPi.
 
 After you installed Hyperion, as described [here](https://github.com/tvdzwan/hyperion/wiki/installation), you need a configuration. You can create the configuration file with a tool called [HyperionCon](https://raw.github.com/tvdzwan/hypercon/master/deploy/HyperCon.jar) (more details can be found [Hyperion Configuration](https://github.com/tvdzwan/hyperion/wiki/configuration)). This tool, however, does not support the Tinkerforge device. This means you need to edit the &#8220;device&#8221; section of your hyperion.config.json manually.
 

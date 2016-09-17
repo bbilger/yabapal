@@ -35,7 +35,7 @@ I don't like the first approach because the mobile network availability on my wa
 
 The disadvantage of the second is that I don't want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
 
-Fortunately at least one other solution exists &#8211; my solution 🙂
+Fortunately at least one other solution exists - my solution 🙂
 
 # **Abstract solution**
 
@@ -109,7 +109,7 @@ svc wifi disable
 
 Snippet explanation: The first three lines disable the ADB service and the fourth disables WiFi, again. The script is simply the counterpart of the first one.
 
-Finally switch to the &#8220;Cron&#8221; tab, check &#8220;Auto Restart&#8221; (enable jobs on reboot) and press &#8220;Start&#8221;. Pressing &#8220;Start&#8221; is necessary each time you add/enable a new task &#8211; just in case you want to add more cron jobs.
+Finally switch to the &#8220;Cron&#8221; tab, check &#8220;Auto Restart&#8221; (enable jobs on reboot) and press &#8220;Start&#8221;. Pressing &#8220;Start&#8221; is necessary each time you add/enable a new task - just in case you want to add more cron jobs.
 
 That's it on the device. Let's go on with the PC side.
 
@@ -238,14 +238,14 @@ Now that all should be set up, let's take the final step: creating content! This
 
 ### Websites
 
-We are going to start with downloading entire websites (a.k.a. &#8220;crawling&#8221;) &#8211; at least to a certain depth. The software I am using for that purpose is &#8220;httrack&#8221;. The software is extremely powerful, and yet very tricky to use. Check the manpage or your search engine of choice for further information.
+We are going to start with downloading entire websites (a.k.a. &#8220;crawling&#8221;) - at least to a certain depth. The software I am using for that purpose is &#8220;httrack&#8221;. The software is extremely powerful, and yet very tricky to use. Check the manpage or your search engine of choice for further information.
 
 Since the parameters to crawl a page are very dependent on the page, I can only give you a few hints:
 
   1. <span style="line-height: 14px;">make sure to set a mobile user agent (&#8220;-F <mobile user agent>&#8221;)</span>
   2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
-  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
-  4. &#8220;&#8211;depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
+  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;-depth 2&#8221; works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
+  4. &#8220;-depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
   5. Search the internet or the httrack forum. If you are lucky you will find the perfect parameters to crawl your page.
 
 Currently I am using the following script for crawling. I am publishing it here, in the hope you can use it as template for your solution. You simply have to adapt the URLs, the depths and the additional options. Finding the right values for the two last-mentioned parameters might take some time. So try&error, as always 😉 You can, however, call httrack directly.
@@ -337,7 +337,7 @@ As an alternative you can navigate to the index.html file with &#8220;file://...
 
 Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget).
 
-What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it's sometimes a bit difficult to get the stream's URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won't play properly on mobile devices &#8211; at least on mine.
+What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it's sometimes a bit difficult to get the stream's URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won't play properly on mobile devices - at least on mine.
 
 So it is easier and more efficient to use [VLC](http://en.wikipedia.org/wiki/VLC_media_player) in conjunction with the tool [FreetuxTV](ttp://code.google.com/p/freetuxtv/). VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here: [http://database.freetuxtv.net](http://database.freetuxtv.net)) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
 

@@ -16,7 +16,7 @@ I recently purchased some [Tinkerforge](http://www.tinkerforge.com/) bricklets a
 
 > We do not offer a pre-compiled library, since it would be a pain in the ass to provide them for all combinations of architectures and operating systems. <http://www.tinkerforge.com/en/doc/Software/API_Bindings_C.html>
 
-Well, I think it is a pain in the ass not to offer such a library &#8211; not even a Makefile to create one.
+Well, I think it is a pain in the ass not to offer such a library - not even a Makefile to create one.
 
 So I created one: <https://github.com/bbilger/libtinkerforge>
 
