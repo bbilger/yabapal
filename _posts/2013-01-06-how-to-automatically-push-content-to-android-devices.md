@@ -219,7 +219,7 @@ Android side:
   4. long press on the task that starts ADB-over-WiFi (e.g. &#8220;start adb over wifi&#8221;)
   5. confirm execution
   6. grant super user rights (always)
-  7. wait **Attention: **there seems to be some bug in the app, because it needs longer than 10 seconds for the screen to come back and Android says that the app does not respond. Just ignore this and press &#8220;OK&#8221; or &#8220;Wait&#8221;. The problem only exists when executing it manually, but not when the app triggers execution.
+  7. wait **Attention:** there seems to be some bug in the app, because it needs longer than 10 seconds for the screen to come back and Android says that the app does not respond. Just ignore this and press &#8220;OK&#8221; or &#8220;Wait&#8221;. The problem only exists when executing it manually, but not when the app triggers execution.
 
 After a few seconds the perl script should push the file and stop execution then. Verify that on your Android device. If you have any trouble here, then just leave a comment.
 
@@ -333,11 +333,11 @@ In order to use the websites on your Android device you&#8217;ll need two additi
   1. A file browser in order to navigate to the files.
   2. A browser. Yes, you need a browser, because you can&#8217;t open HTML files from your device&#8217;s storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
-As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e){:target="_blank"}.
+As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
 ### Videos / Livestreams
 
-Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget){:target="_blank"}.
+Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget).
 
 What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it&#8217;s sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
 
@@ -357,11 +357,11 @@ We can now use this as a template to record a stream using vlc:
 cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2}:duplicate{dst=std{access=file,mux=ogg,dst="/home/user/android_push/&lt;name&gt;.ogg"}}'
 ```
 
-Make sure to remove _&#8220;#sout&#8221;,  &#8220;,dst=display&#8221; , &#8220;[&#8221; and &#8220;]&#8221; _from the options and enclose the options for the vlc call with single quotes.
+Make sure to remove `#sout`,  `,dst=display` , `[` and `]` from the options and enclose the options for the vlc call with single quotes.
 
 Update: Don&#8217;t use the stream&#8217;s URL from the command line, but from the stream&#8217;s properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
 
-What&#8217;s missing, is the ability to stop the stream dumping after some time. A simple bash script &#8220;runfor&#8221; that can do this for us:
+What&#8217;s missing, is the ability to stop the stream dumping after some time. A simple bash script `runfor` that can do this for us:
 
 ``` bash
 #!/bin/bash
@@ -394,6 +394,6 @@ Feel free to leave a comment, if you like the solution, have problems with it, h
 
 # Side Note
 
-I used this setup on my desktop PC, whereas my PC booted automatically in the morning (check [MythTV Wiki](http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm){:target="_blank"} for information about how to boot automatically).
+I used this setup on my desktop PC, whereas my PC booted automatically in the morning (check [MythTV Wiki](http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm) for information about how to boot automatically).
 
 Since I purchased a Raspberry Pi, the scripts are running on that machine right now. The Android SDK doesn&#8217;t run on its ARM processor, but some guys at the xda-developers forum managed to compile ADB on the ARM processor: <http://forum.xda-developers.com/showthread.php?t=1924492> The binary is also linked in that thread: <http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509>
