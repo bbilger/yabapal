@@ -56,7 +56,7 @@ public <T extends Appendable & CharSequence> void finishLine(T str) {
 }
 ```
 
-(BTW: no idea why they designed Appendable's append method to throw an IOException&#8230;)
+(BTW: no idea why they designed Appendable's append method to throw an IOException...)
 
 There's just one rule for those bounds:
 

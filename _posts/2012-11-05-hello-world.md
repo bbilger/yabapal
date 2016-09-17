@@ -25,10 +25,10 @@ Well, all the topics I currently waste my time with:
       * mostly Java
           * Spring
           * Java SE
-          * Java EE (JSF, JPA, &#8230;)
+          * Java EE (JSF, JPA, ...)
           * Eclipse
       * Perl
-      * &#8230;
+      * ...
   * Linux
   * Android
 

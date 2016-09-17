@@ -6,8 +6,6 @@ author: Björn Bilger
 layout: post
 guid: http://yabapal.wordpress.com/?p=3
 permalink: /2013/01/06/how-to-automatically-push-content-to-android-devices/
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:8:"41859952";s:7:"blog_id";s:8:"42429198";s:9:"mod_stamp";s:19:"2013-01-06 20:08:29";}'
 categories:
   - Android
   - Linux
@@ -18,7 +16,7 @@ tags:
   - offline reading
   - Pocket Alternative
 ---
-# **What**
+# What
 
 In this post I will show you how to automatically push content (websites, videos, music or rather files in general) from a Linux machine (the approach should be adaptable to windows/mac, as well) to an Android device (tablet or smartphone).
 
@@ -33,7 +31,7 @@ A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many ta
   1. tethering my smartphone to the tablet
   2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en)
 
-I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it's simply too much work early in the morning&#8230;
+I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it's simply too much work early in the morning...
 
 The disadvantage of the second is that I don't want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
 
@@ -333,7 +331,7 @@ In order to use the websites on your Android device you'll need two additional A
   1. A file browser in order to navigate to the files.
   2. A browser. Yes, you need a browser, because you can't open HTML files from your device's storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
-As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
+As an alternative you can navigate to the index.html file with &#8220;file://...&#8221; or &#8220;file:///...&#8221;, depends... Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
 ### Videos / Livestreams
 

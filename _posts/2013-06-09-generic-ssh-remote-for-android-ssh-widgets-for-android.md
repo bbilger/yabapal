@@ -127,7 +127,7 @@ I am using it for example to start a radio streams (.pls).
 
 You might wonder about line 3 and 4 in the script. If I do not stop playback and don't wait for a second, then my RPi or rather [Raspbmc](http://www.raspbmc.com/) will crash. So this is a workaround to avoid a crash by delaying playback of the next resource. It might be that you don't have those problems and maybe it's specific to [Raspbmc](http://www.raspbmc.com/), only.
 
-In case you want to execute some plugin functionality, remotely, then you should check ~/.xmbc/xbmc.log. This is especially usefuly, when you want to know which streams or resource is opened. Check for this line &#8220;COMXPlayer: Opening: &#8230;&#8221;.
+In case you want to execute some plugin functionality, remotely, then you should check ~/.xmbc/xbmc.log. This is especially usefuly, when you want to know which streams or resource is opened. Check for this line &#8220;COMXPlayer: Opening: ...&#8221;.
 
 Note: If you only want to use all this for controlling XBMC, then instead of using ssh, you could also use [XBMC's REST API](http://wiki.xbmc.org/index.php?title=JSON-RPC_API) and utilize the [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) plugin [RESTask for Tasker](https://play.google.com/store/apps/details?id=com.freehaha.restask) to access it.
 
@@ -145,7 +145,7 @@ Just execute the following command from a terminal, in order to create a public/
 ssh-keygen -t rsa
 ```
 
-Just follow the instructions&#8230;
+Just follow the instructions...
 
   1. <span style="line-height: 13px;">Enter a file path for your private key (e.g. ~/.ssh/rpi)</span>
   2. If you like you can also enter a password, but this is not required.
