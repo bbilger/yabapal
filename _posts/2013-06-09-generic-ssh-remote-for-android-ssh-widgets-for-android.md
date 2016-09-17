@@ -147,7 +147,7 @@ ssh-keygen -t rsa
 
 Just follow the instructions...
 
-  1. <span style="line-height: 13px;">Enter a file path for your private key (e.g. ~/.ssh/rpi)</span>
+  1. Enter a file path for your private key (e.g. `~/.ssh/rpi`)
   2. If you like you can also enter a password, but this is not required.
 
 This will generate two files: a private key wihout any extension (e.g. ~/.ssh/rpi) and a public key (e.g. ~/.ssh/rpi.pub).

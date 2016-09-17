@@ -190,7 +190,7 @@ perl /home/user/scripts/adb_push.pl 192.168.2.101:5555 /home/user/android_push /
 
 The parameters are defined as follows:
 
-  1. <span style="line-height: 14px;">path to the script above</span>
+  1. path to the script above
   2. (static) IP of your Android device and the port of the ADB service (ip:port)
   3. location of the folder that contains the content, you want to push
   4. The path on your Android device were you want to push your files to. **Attention**: This depends on your Android device! On my phone the path starts with `/mnt/sdcard/...`, whereas on my tablet it starts with `/sdcard/...`. You can find the right for you by opening a remote shell on your Android device via ADB. Then navigate to the location you want to push the files to and use that path.
@@ -206,7 +206,7 @@ Now it is time to test our setup.
 
 PC side:
 
-  1. <span style="line-height: 14px;">place a file into the folder from where you want to push files from</span>
+  1. place a file into the folder from where you want to push files from
   2. start the script on your PC as described above
 
 Android side:
@@ -225,7 +225,7 @@ After a few seconds the perl script should push the file and stop execution then
 
 Now that we made sure that the setup works, we need to execute the script automatically. There are two possibilities:
 
-  1. <span style="line-height: 14px;">set up a cron job that executes the script at a scheduled time</span>
+  1. set up a cron job that executes the script at a scheduled time
   2. execute the script on startup
 
 The first one is the only possibility, if your PC is running all the time. The second scenario can either be realized by the window managers capability to execute scripts on startup or via init-scripts. Using your search engine of choice will help you to set this up 😉
@@ -242,7 +242,7 @@ We are going to start with downloading entire websites (a.k.a. *crawling*) - at 
 
 Since the parameters to crawl a page are very dependent on the page, I can only give you a few hints:
 
-  1. <span style="line-height: 14px;">make sure to set a mobile user agent (`-F <mobile user agent>`)</span>
+  1. make sure to set a mobile user agent (`-F <mobile user agent>`)
   2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
   3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. `-depth 2&` works quite well on most mobile sites, but probably you won't be able to crawl/read articles that spread over several pages.
   4. `-depth 3` on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: `-\*blog\* -\*ticker\*`. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.

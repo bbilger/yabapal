@@ -1,6 +1,6 @@
 ---
 id: 219
-title: 'Causes of &#8220;Remounting filesystem read-only&#8221; / &#8220;Detected aborted journal&#8221;'
+title: 'Causes of "Remounting filesystem read-only" / "Detected aborted journal"'
 date: 2014-02-06T00:57:42+00:00
 author: Björn Bilger
 layout: post

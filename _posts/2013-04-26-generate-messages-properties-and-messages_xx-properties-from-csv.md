@@ -127,11 +127,9 @@ Expectations, requirements and recommendations:
 
 What is the script doing:
 
-  1. <span style="line-height:13px;">Parses `messages.csv` (expects UTF-8 encoding) and creates an internal representation of it. The internal representation is a list of arrays. Whereas the list represents the lines and the arrays represent the fields.</span>
+  1. Parses `messages.csv` (expects UTF-8 encoding) and creates an internal representation of it. The internal representation is a list of arrays. Whereas the list represents the lines and the arrays represent the fields.
   2. Overwrites the files `messages.properties` and `messages_xx.properties`. These will contain the keys and the appropriate localized message in the format `key=locaizedMessage`. In case no localized message is provided, a comment is inserted into the properties file: `# key`. The encoding of these files is **ISO 8859-1** or rather **Latin1**, which is equivalent. This is required by Java: <http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html>
   3. Generates message.properties and messages_xx.properties and the messages class.
-
-<span id="script"> </span>
 
 ``` perl
 use strict;

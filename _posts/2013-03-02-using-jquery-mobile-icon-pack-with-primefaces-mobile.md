@@ -36,7 +36,7 @@ For simplicity we will use the following structure to include jQuery Mobile Ico
             icons-18-white-pack.png
             icons-36-black-pack.png
             icons-36-white-pack.png
-        jqm-icon-pack-3.0.0-fa.css</pre>
+        jqm-icon-pack-3.0.0-fa.css
 ```
 
 If this worked, I wouldn't have written this post. The problem is that `jqm-icon-pack-3.0.0-fa.css` cannot find the fonts and images. This is because the requests from the client are relative to the request path of the CSS file. The requests look like that:

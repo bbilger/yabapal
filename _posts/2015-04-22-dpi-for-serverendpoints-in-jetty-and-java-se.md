@@ -63,9 +63,9 @@ public class ServerEndpointInstanceFactory<T> implements ServerEndpointConfig {
   public Configurator getConfigurator() {
     return new Configurator() {
       @Override
-          public <E> E getEndpointInstance(Class<E> endpointClass) throws InstantiationException {
+      public <E> E getEndpointInstance(Class<E> endpointClass) throws InstantiationException {
         return (E) endpointFactory.apply((Class<T>) endpointClass);
-          }
+      }
     };
   }
   @Override

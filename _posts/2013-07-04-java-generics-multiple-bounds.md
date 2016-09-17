@@ -64,7 +64,7 @@ There's just one rule for those bounds:
 
 So those examples won't compile:
 
-  * `<T extends Interface1 & Class>` (use: `<T extends Class & InterfaceX & ... & InterfaceN>`, instead)</span>
+  * `<T extends Interface1 & Class>` (use: `<T extends Class & InterfaceX & ... & InterfaceN>`, instead)
   * `<T extends Class1 & Class2 & ...>`  (this simply does not work)
 
 With this neat *trick* it is possible to
