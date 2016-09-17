@@ -22,7 +22,7 @@ tags:
 
 In this post I will show you how to automatically push content (websites, videos, music or rather files in general) from a Linux machine (the approach should be adaptable to windows/mac, as well) to an Android device (tablet or smartphone).
 
-The setup might take some time, but if you finish this guide, you can simply grab your Android device in the morning and have the latest content you want, without doing anything! So it&#8217;s worth the time to set it up, once. Nevertheless: Some basic knowledge about Bash and Perl is necessary.
+The setup might take some time, but if you finish this guide, you can simply grab your Android device in the morning and have the latest content you want, without doing anything! So it's worth the time to set it up, once. Nevertheless: Some basic knowledge about Bash and Perl is necessary.
 
 <!--more-->
 
@@ -33,9 +33,9 @@ A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many ta
   1. tethering my smartphone to the tablet
   2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en)
 
-I don&#8217;t like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it&#8217;s simply too much work early in the morning&#8230;
+I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it&#8217;s simply too much work early in the morning&#8230;
 
-The disadvantage of the second is that I don&#8217;t want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
+The disadvantage of the second is that I don't want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
 
 Fortunately at least one other solution exists &#8211; my solution 🙂
 
@@ -57,15 +57,15 @@ Some prerequisites, that are necessary in order to use the solution:
 
   * A PC running with Linux, and some basic knowledge about it.
   * Some basic knowledge about Perl and Bash.
-  * A **rooted** Android device. Else enabling/disabling ADB-over-WiFi won&#8217;t work.
+  * A **rooted** Android device. Else enabling/disabling ADB-over-WiFi won't work.
   * The [Android SDK](http://developer.android.com/sdk/index.html)
   * The app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en), which is necessary in order to enable/disable ADB-over-WiFi.
-  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device&#8217;s MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router&#8217;s web-interface.
-  * Some time, because it&#8217;s a &#8220;nerdy&#8221; solution 😉
+  * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device's MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router&#8217;s web-interface.
+  * Some time, because it's a &#8220;nerdy&#8221; solution 😉
 
 # **Solution**
 
-Let&#8217;s start setting up the solution.
+Let's start setting up the solution.
 
 ## Setup on Android
 
@@ -77,8 +77,8 @@ Create a task to start ADB-over-WiFi:
 
   1. Enter a name e.g. &#8220;start adb wifi&#8221;
   2. Check &#8220;Active&#8221;
-  3. Enter a cron expression in the second text field. For example `0 7 \* \* 1,2,3,4,5`, in order to start the task on weekdays at 7 o&#8217;clock. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
-  4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
+  3. Enter a cron expression in the second text field. For example `0 7 \* \* 1,2,3,4,5`, in order to start the task on weekdays at 7 o'clock. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
+  4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android's word completion is a bit annoying here.
   5. Save the task.
 
 ``` bash
@@ -98,7 +98,7 @@ Create a task to stop ADB-over-WiFi:
   1. Enter a name e.g. &#8220;stop adb wifi&#8221;
   2. Check &#8220;Active&#8221;
   3. Enter a cron expression in the second text field. For example `10 7 \* \* 1,2,3,4,5`, in order to stop WiFi and the ADB service ten minutes later, again. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
-  4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
+  4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android's word completion is a bit annoying here.
   5. Save the task.
 
 ``` bash
@@ -113,7 +113,7 @@ Snippet explanation: The first three lines disable the ADB service and the four
 
 Finally switch to the &#8220;Cron&#8221; tab, check &#8220;Auto Restart&#8221; (enable jobs on reboot) and press &#8220;Start&#8221;. Pressing &#8220;Start&#8221; is necessary each time you add/enable a new task &#8211; just in case you want to add more cron jobs.
 
-That&#8217;s it on the device. Let&#8217;s go on with the PC side.
+That's it on the device. Let&#8217;s go on with the PC side.
 
 ## Setup on PC
 
@@ -200,7 +200,7 @@ The parameters are defined as follows:
 
 _Note: I recommend to use fully qualified path names to start the script, because, depending on your method to start the script, the $HOME environment variable might not be set. _
 
-_Note: The script is in a loop until it can connect to the device. So if you don&#8217;t want to waste CPU cycles, you can add some lines of code to stop execution after a few retries._
+_Note: The script is in a loop until it can connect to the device. So if you don't want to waste CPU cycles, you can add some lines of code to stop execution after a few retries._
 
 ### Testing
 
@@ -236,7 +236,7 @@ _Note: If you execute at startup, be aware of the fact that you can boot your PC
 
 ## Content Generation
 
-Now that all should be set up, let&#8217;s take the final step: creating content! This next section will and only can give you a basic idea of how to fetch content.
+Now that all should be set up, let's take the final step: creating content! This next section will and only can give you a basic idea of how to fetch content.
 
 ### Websites
 
@@ -246,8 +246,8 @@ Since the parameters to crawl a page are very dependent on the page, I can only 
 
   1. <span style="line-height: 14px;">make sure to set a mobile user agent (&#8220;-F <mobile user agent>&#8221;)</span>
   2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
-  3. Play around with the depth to crawl. Don&#8217;t set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won&#8217;t be able to crawl/read articles that spread over several pages.
-  4. &#8220;&#8211;depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it&#8217;s worth the effort to read multi-page articles.
+  3. Play around with the depth to crawl. Don't set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won&#8217;t be able to crawl/read articles that spread over several pages.
+  4. &#8220;&#8211;depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it's worth the effort to read multi-page articles.
   5. Search the internet or the httrack forum. If you are lucky you will find the perfect parameters to crawl your page.
 
 Currently I am using the following script for crawling. I am publishing it here, in the hope you can use it as template for your solution. You simply have to adapt the URLs, the depths and the additional options. Finding the right values for the two last-mentioned parameters might take some time. So try&error, as always 😉 You can, however, call httrack directly.
@@ -328,10 +328,10 @@ In order to crawl the pages automatically, you can create a cron job for your cr
 
 #### Additional Apps
 
-In order to use the websites on your Android device you&#8217;ll need two additional Apps:
+In order to use the websites on your Android device you'll need two additional Apps:
 
   1. A file browser in order to navigate to the files.
-  2. A browser. Yes, you need a browser, because you can&#8217;t open HTML files from your device&#8217;s storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
+  2. A browser. Yes, you need a browser, because you can't open HTML files from your device&#8217;s storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
 As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
@@ -339,11 +339,11 @@ As an alternative you can navigate to the index.html file with &#8220;file://&#8
 
 Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget).
 
-What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it&#8217;s sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
+What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it's sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
 
 So it is easier and more efficient to use [VLC](http://en.wikipedia.org/wiki/VLC_media_player) in conjunction with the tool [FreetuxTV](ttp://code.google.com/p/freetuxtv/). VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here: [http://database.freetuxtv.net](http://database.freetuxtv.net)) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
 
-Start FreetuxTV via the commandline and select the transcoding option of your choice on the &#8220;Recordings&#8221; tab in the preferences. Now start to record the stream you like to dump. You can see the stream&#8217;s URL and the VLC options in the command line, now.
+Start FreetuxTV via the commandline and select the transcoding option of your choice on the &#8220;Recordings&#8221; tab in the preferences. Now start to record the stream you like to dump. You can see the stream's URL and the VLC options in the command line, now.
 
 Eample output:
 
@@ -359,9 +359,9 @@ cvlc -vvv &lt;your stream&gt; --sout '#transcode{vcodec=theo,vb=800,scale=1,acod
 
 Make sure to remove `#sout`,  `,dst=display` , `[` and `]` from the options and enclose the options for the vlc call with single quotes.
 
-Update: Don&#8217;t use the stream&#8217;s URL from the command line, but from the stream&#8217;s properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
+Update: Don't use the stream&#8217;s URL from the command line, but from the stream&#8217;s properties. The reason is that asx-&#8220;streams&#8221; redirect you to another stream. The stream you were redirected to will be shown on the shell, but you cannot use it, since it contains some authentication information and will reject future connection attempts.
 
-What&#8217;s missing, is the ability to stop the stream dumping after some time. A simple bash script `runfor` that can do this for us:
+What's missing, is the ability to stop the stream dumping after some time. A simple bash script `runfor` that can do this for us:
 
 ``` bash
 #!/bin/bash
@@ -386,9 +386,9 @@ Change the 1st parameter (10m) to whatever time, you like to dump the stream for
 
 # Final words
 
-That&#8217;s it! Well, the article became a little bit longer than it was intended to, but I hope some of you will follow it anyway.
+That's it! Well, the article became a little bit longer than it was intended to, but I hope some of you will follow it anyway.
 
-Furthermore I hope that the solution works for you and saves your time and money (you don&#8217;t need mobile internet) .
+Furthermore I hope that the solution works for you and saves your time and money (you don't need mobile internet) .
 
 Feel free to leave a comment, if you like the solution, have problems with it, have some hints for improvement or want to share your scripts for content generation or pushing.
 
@@ -396,4 +396,4 @@ Feel free to leave a comment, if you like the solution, have problems with it, h
 
 I used this setup on my desktop PC, whereas my PC booted automatically in the morning (check [MythTV Wiki](http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm) for information about how to boot automatically).
 
-Since I purchased a Raspberry Pi, the scripts are running on that machine right now. The Android SDK doesn&#8217;t run on its ARM processor, but some guys at the xda-developers forum managed to compile ADB on the ARM processor: <http://forum.xda-developers.com/showthread.php?t=1924492> The binary is also linked in that thread: <http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509>
+Since I purchased a Raspberry Pi, the scripts are running on that machine right now. The Android SDK doesn't run on its ARM processor, but some guys at the xda-developers forum managed to compile ADB on the ARM processor: <http://forum.xda-developers.com/showthread.php?t=1924492> The binary is also linked in that thread: <http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509>
