@@ -16,7 +16,6 @@ tags:
   - offline reading
   - Pocket Alternative
 ---
-# What
 
 In this post I will show you how to automatically push content (websites, videos, music or rather files in general) from a Linux machine (the approach should be adaptable to windows/mac, as well) to an Android device (tablet or smartphone).
 
@@ -24,14 +23,14 @@ The setup might take some time, but if you finish this guide, you can simply gra
 
 <!--more-->
 
-# **Why**
+# Why
 
 A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many tablets, a WiFi-only device. So I cannot use it on my way to work, to read or watch the latest news. In order to overcome this limitation, two solutions exist:
 
   1. tethering my smartphone to the tablet
   2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en)
 
-I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it's simply too much work early in the morning...
+I don't like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it's simply too much work early in the morning&#8230;
 
 The disadvantage of the second is that I don't want to select the articles I want to read, but the complete news sites. Furthermore the app requires registration, syncs via cloud, etc.
 
@@ -331,7 +330,7 @@ In order to use the websites on your Android device you'll need two additional A
   1. A file browser in order to navigate to the files.
   2. A browser. Yes, you need a browser, because you can't open HTML files from your device's storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
-As an alternative you can navigate to the index.html file with &#8220;file://...&#8221; or &#8220;file:///...&#8221;, depends... Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
+As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e).
 
 ### Videos / Livestreams
 
