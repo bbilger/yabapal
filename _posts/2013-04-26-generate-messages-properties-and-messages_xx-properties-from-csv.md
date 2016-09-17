@@ -31,9 +31,9 @@ I am currently working on web project, which is localized and I lost the overvie
 
 For me this is the perfect solution, because I always have a good overview about all message keys that still need a translation.
 
-Another advantage of this solution is that the script also generates a class with the message keys as constants. So you don&#8217;t need to use raw strings, anymore in your code.<!--more-->
+Another advantage of this solution is that the script also generates a class with the message keys as constants. So you don't need to use raw strings, anymore in your code.<!--more-->
 
-To make sure that we are on the same page, here&#8217;s an example:
+To make sure that we are on the same page, here's an example:
 
 #### Input
 
@@ -85,14 +85,14 @@ public final class Messages {
 
 Since it is a perl script, you need to install perl. In addition, you must install an additional package: &#8220;Text::CSV\_XS&#8221;. On Linux, you can simply run the program &#8220;cpan&#8221; and install the package by executing the command &#8220;install Text::CSV\_XS&#8221;.
 
-I&#8217;ll give you a quick example on how to set up everything but you need to adapt it to your needs, of course. (you can find some [screenshots](#screenshots "screenshots") at the end of the article)
+I'll give you a quick example on how to set up everything but you need to adapt it to your needs, of course. (you can find some [screenshots](#screenshots "screenshots") at the end of the article)
 
   1. Create a new Maven project called &#8220;MessagesBuilder&#8221;
   2. Save the [perl script below](#script "perl script below") as &#8220;messages_builder.pl&#8221; under &#8220;build&#8221; in your Eclipse project.
   3. Create a class named &#8220;Messages&#8221; in the package com.bbilger.util. (you want to adapt this obviously 🙂 )
   4. Create a new file called &#8220;messages.csv&#8221; in your resource folder .
   5. Open &#8220;messages.csv&#8221; with LibreOffice. Choose &#8220;Unicode (UTF-8)&#8221; for encoding, &#8220;;&#8221; as field delimiter and a double-quote as text delimiter
-  6. Write &#8220;Keys&#8221; in the first line in the first column. In the first line of the following columns, you must write the language codes. In the example, I used &#8220;en&#8221; in the second and &#8220;de&#8221; in the third column. So it&#8217;s obvious that your message keys then go into the first column and your localized messages into the following columns.
+  6. Write &#8220;Keys&#8221; in the first line in the first column. In the first line of the following columns, you must write the language codes. In the example, I used &#8220;en&#8221; in the second and &#8220;de&#8221; in the third column. So it's obvious that your message keys then go into the first column and your localized messages into the following columns.
   7. In order to export the spreadsheet properly, perform the following: File->&#8221;Save As&#8230;&#8221;. Set the name to &#8220;messages.csv&#8221;, make sure you check edit filter settings and confirm that you want to export the file as csv. In the upcoming &#8220;Export Text File&#8221; dialog, make sure to change the field delimiter to &#8220;;&#8221; and check the option &#8220;Quote all text cells&#8221;.
   8. Now we can set up the builder in Eclipse. Select the project and perform Project->Properties. Select Builders in the upcoming dialog, click on &#8220;New&#8230;&#8221; and select Program. In the &#8220;Main&#8221; tab of the builder configuration dialog, you have to:
   9. Set the name to &#8220;Messages Builder&#8221; (or whatever you like)
@@ -108,7 +108,7 @@ Note: Using Excel instead of LibreOffice, is possible, too, of course.
 
 # Script
 
-Note that the script is a quick and dirty solution for my problem so it contains the absolute minimum, only. It&#8217;s neither very fault tolerant nor very beautiful, but it is to be used by developers anyways 😉
+Note that the script is a quick and dirty solution for my problem so it contains the absolute minimum, only. It's neither very fault tolerant nor very beautiful, but it is to be used by developers anyways 😉
 
 The script expects the following arguments:
 
