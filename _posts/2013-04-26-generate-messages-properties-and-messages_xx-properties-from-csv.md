@@ -128,7 +128,7 @@ Expectations, requirements and recommendations:
 What is the script doing:
 
   1. <span style="line-height:13px;">Parses &#8220;messages.csv&#8221; (expects UTF-8 encoding) and creates an internal representation of it. The internal representation is a list of arrays. Whereas the list represents the lines and the arrays represent the fields.</span>
-  2. Overwrites the files &#8220;messages.properties&#8221; and &#8220;messages_xx.properties&#8221;. These will contain the keys and the appropriate localized message in the format &#8220;key=locaizedMessage&#8221;. In case no localized message is provided, a comment is inserted into the properties file: &#8220;# key&#8221;. The encoding of these files is &#8220;ISO 8859-1&#8221; or rather &#8220;Latin1&#8221;, which is equivalent. This is required by Java: [http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html](http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html "http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html")
+  2. Overwrites the files &#8220;messages.properties&#8221; and &#8220;messages_xx.properties&#8221;. These will contain the keys and the appropriate localized message in the format &#8220;key=locaizedMessage&#8221;. In case no localized message is provided, a comment is inserted into the properties file: &#8220;# key&#8221;. The encoding of these files is &#8220;ISO 8859-1&#8221; or rather &#8220;Latin1&#8221;, which is equivalent. This is required by Java: <http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html>
   3. Generates message.properties and messages_xx.properties and the messages class.
 
 <span id="script"> </span>

@@ -22,14 +22,16 @@ tags:
 
 In this post I will show you how to automatically push content (websites, videos, music or rather files in general) from a Linux machine (the approach should be adaptable to windows/mac, as well) to an Android device (tablet or smartphone).
 
-The setup might take some time, but if you finish this guide, you can simply grab your Android device in the morning and have the latest content you want, without doing anything! So it&#8217;s worth the time to set it up, once. Nevertheless: Some basic knowledge about Bash and Perl is necessary.<!--more-->
+The setup might take some time, but if you finish this guide, you can simply grab your Android device in the morning and have the latest content you want, without doing anything! So it&#8217;s worth the time to set it up, once. Nevertheless: Some basic knowledge about Bash and Perl is necessary.
+
+<!--more-->
 
 # **Why**
 
 A few weeks ago I finally received my Nexus 7. Unfortunately it is, like many tablets, a WiFi-only device. So I cannot use it on my way to work, to read or watch the latest news. In order to overcome this limitation, two solutions exist:
 
   1. tethering my smartphone to the tablet
-  2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en){:target="_blank"}
+  2. using an app like [Pocket (Formerly Read It Later)](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en)
 
 I don&#8217;t like the first approach because the mobile network availability on my way to work is not very reliable and sometimes very slow. Furthermore it&#8217;s simply too much work early in the morning&#8230;
 
@@ -39,7 +41,7 @@ Fortunately at least one other solution exists &#8211; my solution 🙂
 
 # **Abstract solution**
 
-My solution to this problem, is to use <a title="http://developer.android.com/tools/help/adb.html" href="http://developer.android.com/tools/help/adb.html" target="_blank">ADB (Android Debug Bridge)</a>. This little tool comes with the <a title="http://developer.android.com/sdk/index.html" href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> and allows you to interact with your Android device via a remote shell, push/pull files to and from your Android device, etc.
+My solution to this problem, is to use [ADB (Android Debug Bridge)](http://developer.android.com/tools/help/adb.html). This little tool comes with the [Android SDK](http://developer.android.com/sdk/index.html) and allows you to interact with your Android device via a remote shell, push/pull files to and from your Android device, etc.
 
 ADB can either be used when you connect your device to your PC via USB, but also, and that is important here, via WiFi.
 
@@ -56,8 +58,8 @@ Some prerequisites, that are necessary in order to use the solution:
   * A PC running with Linux, and some basic knowledge about it.
   * Some basic knowledge about Perl and Bash.
   * A **rooted** Android device. Else enabling/disabling ADB-over-WiFi won&#8217;t work.
-  * The <a title="http://developer.android.com/sdk/index.html" href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a>
-  * The app <a title="https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en" href="https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en" target="_blank">Cron4Phone</a>, which is necessary in order to enable/disable ADB-over-WiFi.
+  * The [Android SDK](http://developer.android.com/sdk/index.html)
+  * The app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en), which is necessary in order to enable/disable ADB-over-WiFi.
   * A static IP for your Android device within your local network. Normally you can achieve this by mapping your device&#8217;s MAC address (e.g. Settings->About *->Status: Wi-Fi MAX address) to a local IP via your router&#8217;s web-interface.
   * Some time, because it&#8217;s a &#8220;nerdy&#8221; solution 😉
 
@@ -69,13 +71,13 @@ Let&#8217;s start setting up the solution.
 
 We begin with the Android device.
 
-Install the app <a title="https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en" href="https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en" target="_blank">Cron4Phone</a> and open it. Go to the tab &#8220;Tasks&#8221; and add a task via the menu in that view.
+Install the app [Cron4Phone](https://play.google.com/store/apps/details?id=com.aes.cron4phonefree&hl=en) and open it. Go to the tab &#8220;Tasks&#8221; and add a task via the menu in that view.
 
 Create a task to start ADB-over-WiFi:
 
   1. Enter a name e.g. &#8220;start adb wifi&#8221;
   2. Check &#8220;Active&#8221;
-  3. Enter a cron expression in the second text field. For example &#8220;0 7 \* \* 1,2,3,4,5&#8221;, in order to start the task on weekdays at 7 o&#8217;clock. You can find more information about the cron syntax <a title="http://en.wikipedia.org/wiki/Cron#CRON_expression" href="http://en.wikipedia.org/wiki/Cron#CRON_expression" target="_blank">here at Wikipedia</a>.
+  3. Enter a cron expression in the second text field. For example `0 7 \* \* 1,2,3,4,5`, in order to start the task on weekdays at 7 o&#8217;clock. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
   5. Save the task.
 
@@ -95,7 +97,7 @@ Create a task to stop ADB-over-WiFi:
 
   1. Enter a name e.g. &#8220;stop adb wifi&#8221;
   2. Check &#8220;Active&#8221;
-  3. Enter a cron expression in the second text field. For example &#8220;10 7 \* \* 1,2,3,4,5&#8221;, in order to stop WiFi and the ADB service ten minutes later, again. You can find more information about the cron syntax <a title="http://en.wikipedia.org/wiki/Cron#CRON_expression" href="http://en.wikipedia.org/wiki/Cron#CRON_expression" target="_blank">here at Wikipedia</a>.
+  3. Enter a cron expression in the second text field. For example `10 7 \* \* 1,2,3,4,5`, in order to stop WiFi and the ADB service ten minutes later, again. You can find more information about the cron syntax [here at Wikipedia](http://en.wikipedia.org/wiki/Cron#CRON_expression).
   4. Enter the script below into the third text field. **Attention:** Make sure to avoid typos! Android&#8217;s word completion is a bit annoying here.
   5. Save the task.
 
@@ -115,9 +117,9 @@ That&#8217;s it on the device. Let&#8217;s go on with the PC side.
 
 ## Setup on PC
 
-Download the <a title="http://developer.android.com/sdk/index.html" href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> and extract it somewhere on your hdd.
+Download the [http://developer.android.com/sdk/index.html](Android SDK) and extract it somewhere on your hdd.
 
-The first necessary script is the one below. It simply tries to connect to the Android device and pushes all files/folders from the passed directory to it. After each run the pushed files will be deleted and backed up into another folder (&#8220;\_adb\_push_backup&#8221;) in the same directory until the next execution.
+The first necessary script is the one below. It simply tries to connect to the Android device and pushes all files/folders from the passed directory to it. After each run the pushed files will be deleted and backed up into another folder (`/_adb/_push_backup`) in the same directory until the next execution.
 
 ``` perl
 #!/usr/bin/perl
@@ -180,7 +182,7 @@ system("mkdir $localPath/$BACK_UP_FOLDER");
 system("find $localPath -maxdepth 1 -mindepth 1 -not -name $BACK_UP_FOLDER -print0 | xargs -0 mv -t $backupPath");
 ```
 
-Save the script e.g. under &#8220;$HOME/scripts/adb_push.pl&#8221; and make the script executable.
+Save the script e.g. under `$HOME/scripts/adb_push.pl` and make the script executable.
 
 You can start the script as follows:
 
@@ -193,7 +195,7 @@ The parameters are defined as follows:
   1. <span style="line-height: 14px;">path to the script above</span>
   2. (static) IP of your Android device and the port of the ADB service (ip:port)
   3. location of the folder that contains the content, you want to push
-  4. The path on your Android device were you want to push your files to. **Attention**: This depends on your Android device! On my phone the path starts with &#8220;/mnt/sdcard/&#8230;&#8221;, whereas on my tablet it starts with &#8220;/sdcard/&#8230;&#8221;. You can find the right for you by opening a remote shell on your Android device via ADB. Then navigate to the location you want to push the files to and use that path.
+  4. The path on your Android device were you want to push your files to. **Attention**: This depends on your Android device! On my phone the path starts with `/mnt/sdcard/...`, whereas on my tablet it starts with `/sdcard/...`. You can find the right for you by opening a remote shell on your Android device via ADB. Then navigate to the location you want to push the files to and use that path.
   5. path to the ADB executable
 
 _Note: I recommend to use fully qualified path names to start the script, because, depending on your method to start the script, the $HOME environment variable might not be set. _
@@ -212,8 +214,8 @@ PC side:
 Android side:
 
   1. disable WiFi
-  2. <span style="line-height: 14px;">open Cron4Phone</span>
-  3. navigate to the &#8220;Tasks&#8221; tab
+  2. open Cron4Phone
+  3. navigate to the `Tasks` tab
   4. long press on the task that starts ADB-over-WiFi (e.g. &#8220;start adb over wifi&#8221;)
   5. confirm execution
   6. grant super user rights (always)
@@ -230,7 +232,7 @@ Now that we made sure that the setup works, we need to execute the script automa
 
 The first one is the only possibility, if your PC is running all the time. The second scenario can either be realized by the window managers capability to execute scripts on startup or via init-scripts. Using your search engine of choice will help you to set this up 😉
 
-_Note: If you execute at startup, be aware of the fact that you can boot your PC even when it is shut down. Further information about this can be found in the <a title="http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm" href="http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm" target="_blank">MythTV Wiki</a>._
+_Note: If you execute at startup, be aware of the fact that you can boot your PC even when it is shut down. Further information about this can be found in the [MythTV Wiki](http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm)._
 
 ## Content Generation
 
@@ -243,7 +245,7 @@ We are going to start with downloading entire websites (a.k.a. &#8220;crawling&#
 Since the parameters to crawl a page are very dependent on the page, I can only give you a few hints:
 
   1. <span style="line-height: 14px;">make sure to set a mobile user agent (&#8220;-F <mobile user agent>&#8221;)</span>
-  2. if a dedicated mobile site is available, make sure to use it: &#8220;http://m. * &#8220;
+  2. if a dedicated mobile site is available, make sure to use it: `http://m. * `
   3. Play around with the depth to crawl. Don&#8217;t set the depth too high. This will result in a long crawling/pushing procedure and will also result in a high load for the site owner. &#8220;&#8211;depth 2&#8221; works quite well on most mobile sites, but probably you won&#8217;t be able to crawl/read articles that spread over several pages.
   4. &#8220;&#8211;depth 3&#8221; on the other hand can result in long crawling times. You can try to reduce the load by excluding links with certain patterns: &#8220;-\*blog\* -\*ticker\*&#8221;. This list, can be quite long, so you have to decide for yourself, whether it&#8217;s worth the effort to read multi-page articles.
   5. Search the internet or the httrack forum. If you are lucky you will find the perfect parameters to crawl your page.
@@ -328,18 +330,18 @@ In order to crawl the pages automatically, you can create a cron job for your cr
 
 In order to use the websites on your Android device you&#8217;ll need two additional Apps:
 
-  1. <span style="line-height: 14px;">A file browser in order to navigate to the files.</span>
+  1. A file browser in order to navigate to the files.
   2. A browser. Yes, you need a browser, because you can&#8217;t open HTML files from your device&#8217;s storage with the default browser. Most alternative browsers in contrast, allow you to open local HTML files. In addition you can bookmark those pages.
 
-As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like <a title="https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=en" href="https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=en" target="_blank">OpenHtml</a>.
+As an alternative you can navigate to the index.html file with &#8220;file://&#8230;&#8221; or &#8220;file:///&#8230;&#8221;, depends&#8230; Or you can use an app like [OpenHtml](https://play.google.com/store/apps/details?id=com.liolick.android.openhtml&hl=e){:target="_blank"}.
 
 ### Videos / Livestreams
 
-Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool <a title="http://en.wikipedia.org/wiki/Wget" href="http://en.wikipedia.org/wiki/Wget" target="_blank">wget</a>.
+Downloading a video is very often as simple as downloading a resource on the internet and can be done with the tool [wget](http://en.wikipedia.org/wiki/Wget){:target="_blank"}.
 
-What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it&#8217;s sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like <a title="http://en.wikipedia.org/wiki/Rtmpdump" href="http://en.wikipedia.org/wiki/Rtmpdump" target="_blank">rtmpdump</a> or <a title="http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html" href="http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html" target="_blank">mplayer</a> to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
+What I was interested in, however, was to record live streams. Since most streams come to you wrapped in flash, it&#8217;s sometimes a bit difficult to get the stream&#8217;s URL. Therefore you can either analyse the network traffic, or ask your search engine of choice. Then you can use a tool like [rtmpdump](http://en.wikipedia.org/wiki/Rtmpdump) or [mplayer](http://www.mplayerhq.hu/DOCS/HTML/en/streaming.html) to dump the stream. The problem is that the process is rather difficult and the dumps normally must be transcoded, because those dumps won&#8217;t play properly on mobile devices &#8211; at least on mine.
 
-So it is easier and more efficient to use <a title="http://en.wikipedia.org/wiki/VLC_media_player" href="http://en.wikipedia.org/wiki/VLC_media_player" target="_blank">VLC</a> in conjunction with the tool <a title="http://code.google.com/p/freetuxtv/" href="http://code.google.com/p/freetuxtv/" target="_blank">FreetuxTV</a>. VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here:  <a title="http://database.freetuxtv.net" href="http://database.freetuxtv.net" target="_blank">http://database.freetuxtv.net</a>) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
+So it is easier and more efficient to use [VLC](http://en.wikipedia.org/wiki/VLC_media_player) in conjunction with the tool [FreetuxTV](ttp://code.google.com/p/freetuxtv/). VLC will be used to dump the stream and FreetuxTV is helpful to find stream URLs (also available here: [http://database.freetuxtv.net](http://database.freetuxtv.net)) and to find the options for VLC. The advantage of VLC is that it can dump much more streaming protocols.
 
 Start FreetuxTV via the commandline and select the transcoding option of your choice on the &#8220;Recordings&#8221; tab in the preferences. Now start to record the stream you like to dump. You can see the stream&#8217;s URL and the VLC options in the command line, now.
 
@@ -392,6 +394,6 @@ Feel free to leave a comment, if you like the solution, have problems with it, h
 
 # Side Note
 
-I used this setup on my desktop PC, whereas my PC booted automatically in the morning (check <a title="http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm" href="http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm" target="_blank">MythTV Wiki</a> for information about how to boot automatically).
+I used this setup on my desktop PC, whereas my PC booted automatically in the morning (check [MythTV Wiki](http://www.mythtv.org/wiki/ACPI_Wakeup#Using_.2Fsys.2Fclass.2Frtc.2Frtc0.2Fwakealarm){:target="_blank"} for information about how to boot automatically).
 
-Since I purchased a Raspberry Pi, the scripts are running on that machine right now. The Android SDK doesn&#8217;t run on its ARM processor, but some guys at the xda-developers forum managed to compile ADB on the ARM processor: <a title="http://forum.xda-developers.com/showthread.php?t=1924492" href="http://forum.xda-developers.com/showthread.php?t=1924492" target="_blank">http://forum.xda-developers.com/showthread.php?t=1924492</a> The binary is also linked in that thread: <a title="http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509" href="http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509" target="_blank">http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509</a>
+Since I purchased a Raspberry Pi, the scripts are running on that machine right now. The Android SDK doesn&#8217;t run on its ARM processor, but some guys at the xda-developers forum managed to compile ADB on the ARM processor: <http://forum.xda-developers.com/showthread.php?t=1924492> The binary is also linked in that thread: <http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509>

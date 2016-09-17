@@ -95,7 +95,7 @@ With _xbmc-send_ you are able to execute any of the commands provided by XBMC. A
 The syntax for executing a command is:
 
 ``` bash
-xbmc-send --action="&lt;some command&gt;"
+xbmc-send --action="<some command>"
 ```
 
 Here are two scripts I am currently using:
@@ -162,10 +162,10 @@ Start ConnectBot and import your private key via: Menu->&#8221;Manage Pubkeys&#8
 
 ### Install the public key on your remote server
 
-In case, you don&#8217;t have a ssh server installed, install for example openssh. On a Debian-based distribution: _sudo apt-get install openssh-server_
+In case, you don&#8217;t have a ssh server installed, install for example openssh. On a Debian-based distribution: `sudo apt-get install openssh-server`
 
-  1. <span style="line-height: 13px;"><span style="line-height: 13px;">If your ssh server is on a remote machine, connect to it (<em>ssh <usernam>@<ip></em>)</span></span>&nbsp;
-  2. Check if the folder _~/.ssh and the file_ _~/.ssh/authorized_keys_ exist (not the case on RPi). If not: Create the folder and the file with proper permissions: _cd ~ && mkdir .ssh && chmod 700 .ssh && touch .ssh/authorized\_keys && chmod 600 .ssh/authorized\_keys_
-  3. Append your previously created public key to the authorized_keys file: _echo &#8220;CONTENTS OF YOUR PUBLIC KEY FILE, entered via clipboard&#8221; >> ~/.ssh/authorized_keys _or copy your public key to the server and perform: _cat /path/to/your/public/key >>  ~/.ssh/authorized_keys_
+  1. If your ssh server is on a remote machine, connect to it (`ssh <usernam>@<ip><`)
+  2. Check if the folder `~/.ssh` and the file `~/.ssh/authorized_keys` exist (not the case on RPi). If not: Create the folder and the file with proper permissions: `cd ~ && mkdir .ssh && chmod 700 .ssh && touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys`
+  3. Append your previously created public key to the authorized_keys file: `echo "CONTENTS OF YOUR PUBLIC KEY FILE, entered via clipboard" >> ~/.ssh/authorized_keys` or copy your public key to the server and perform: `cat /path/to/your/public/key >>  ~/.ssh/authorized_keys`
 
 Now you should be able to connect to your ssh server from ConnectBot (if you imported the key) and from [Tasker SSH Command Launcher](https://play.google.com/store/apps/details?id=com.aledthomas.taskersshcommand), without providing your password.
