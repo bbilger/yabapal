@@ -1,6 +1,6 @@
 ---
 id: 165
-title: 'Styling Fedora's Xfce spin like Xubuntu'
+title: 'Styling Fedora''s Xfce spin like Xubuntu'
 date: 2013-07-07T22:03:26+00:00
 author: Björn Bilger
 layout: post
@@ -25,7 +25,7 @@ So this is what I did:
 
 <!--more-->
 
-First thing you want to do is to open the application menu's properties menu and uncheck &#8220;Show button title&#8221;. This will remove the unnecessary text on that button. In addition you can change the icon to the Fedora's, if you like.
+First thing you want to do is to open the application menu's properties menu and uncheck _Show button title_. This will remove the unnecessary text on that button. In addition you can change the icon to the Fedora's, if you like.
 
 Next you need to install two packages:
 
