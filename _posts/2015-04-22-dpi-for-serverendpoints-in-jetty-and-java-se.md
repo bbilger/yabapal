@@ -43,9 +43,9 @@ public class ServerEndpointConfigurator extends ServerEndpointConfig.Configurato
 
 But again, one does not have any control over the instantiation of the ServerEndpointConfigurator. So yes, one can inject something but only in case you know what instance to inject at compile time, or one introduces some other fancy mechanism like a static provider.
 
-Since I lost hope in finding a proper solution for Tyrus and didn&#8217;t want to use Weld (total overkill), I decided to give Jetty a try.
+Since I lost hope in finding a proper solution for Tyrus and didn't want to use Weld (total overkill), I decided to give Jetty a try.
 
-After some time digging around in Jetty&#8217;s code, I finally found some solution.
+After some time digging around in Jetty's code, I finally found some solution.
 
 We just need some ServerEndpointConfig:
 
