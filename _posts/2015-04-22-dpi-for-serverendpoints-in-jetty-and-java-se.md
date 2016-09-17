@@ -76,7 +76,7 @@ public class ServerEndpointInstanceFactory<T> implements ServerEndpointConfig {
 }
 ```
 
-This ServerEndpointConfig will serve as a base config for the actual AnnotatedServerEndpointConfig selected by Jetty.[0] The AnnotatedServerEndpointConfig will pick the values either from our base config or the annotated ServerEndpoint.
+This ServerEndpointConfig will serve as a base config for the actual AnnotatedServerEndpointConfig selected by Jetty (_I checked with annotated ServerEndpoints, only. I am not sure if this still works that way if your ServerEndpoint extends Endpoint._). The AnnotatedServerEndpointConfig will pick the values either from our base config or the annotated ServerEndpoint.
 
 Since we are now able to provide an **instance** of an additional ServerEndpointConfig. We are now able to indirectly inject instances into the ServerEndpoint like this (line 12 and 13).
 
@@ -95,5 +95,3 @@ wscontainer = WebSocketServerContainerInitializer.configureContext(context);
 wscontainer.addEndpoint(new ServerEndpointBaseConfigInstanceFactory<ServerEndpoint>(ServerEndpoint.class,
   t -> new ServerEndpoint((condition) ? new SomeDependentComponentA() : new SomeDependentComponentB())));
 ```
-
-[0]: I checked with annotated ServerEndpoints, only. I am not sure if this still works that way if your ServerEndpoint extends Endpoint.
