@@ -8,8 +8,6 @@ name: yabapal
 # Short bio or description (displayed in the header)
 description: Yet Another Blog About Programming And Linux
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
 #
 # Flags below are optional
@@ -21,7 +19,7 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: bbilger/yabapal
+  github: bbilger
   instagram:
   linkedin:
   pinterest:
@@ -41,7 +39,7 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: http://www.bbilger.com
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
