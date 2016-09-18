@@ -4,7 +4,6 @@ title: 'Java Generics - Multiple Bounds'
 date: 2013-07-04T21:48:10+00:00
 author: Björn Bilger
 layout: post
-guid: https://bbilger.com/yabapal/?p=167
 permalink: /2013/07/04/java-generics-multiple-bounds/
 categories:
   - Java

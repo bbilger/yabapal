@@ -4,7 +4,6 @@ title: DPI for ServerEndpoints in Jetty and Java SE
 date: 2015-04-22T23:57:41+00:00
 author: Björn Bilger
 layout: post
-guid: https://bbilger.com/yabapal/?p=253
 permalink: /2015/04/22/dpi-for-serverendpoints-in-jetty-and-java-se/
 categories:
   - Java

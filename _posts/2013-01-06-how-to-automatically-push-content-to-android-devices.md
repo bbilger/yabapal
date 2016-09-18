@@ -4,7 +4,6 @@ title: How to automatically push content to Android devices
 date: 2013-01-06T21:08:29+00:00
 author: Björn Bilger
 layout: post
-guid: http://yabapal.wordpress.com/?p=3
 permalink: /2013/01/06/how-to-automatically-push-content-to-android-devices/
 categories:
   - Android

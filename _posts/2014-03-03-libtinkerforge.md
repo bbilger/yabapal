@@ -4,7 +4,6 @@ title: libtinkerforge
 date: 2014-03-03T22:18:36+00:00
 author: Björn Bilger
 layout: post
-guid: https://bbilger.com/yabapal/?p=223
 permalink: /2014/03/03/libtinkerforge/
 categories:
   - Linux

@@ -4,7 +4,6 @@ title: 'Solving: Kernel panic - not syncing: VFS: Unable to mount root fs on unk
 date: 2013-02-03T22:22:27+00:00
 author: Björn Bilger
 layout: post
-guid: http://yabapal.wordpress.com/?p=55
 permalink: /2013/02/03/solving-kernel-panic-not-syncing-vfs-unable-to-mount-root-fs-on-unknown-blockxy/
 categories:
   - Linux

@@ -4,7 +4,6 @@ title: 'Styling Fedora''s Xfce spin like Xubuntu'
 date: 2013-07-07T22:03:26+00:00
 author: Björn Bilger
 layout: post
-guid: https://bbilger.com/yabapal/?p=165
 permalink: /2013/07/07/styling-fedora-like-xubuntu/
 categories:
   - Linux
