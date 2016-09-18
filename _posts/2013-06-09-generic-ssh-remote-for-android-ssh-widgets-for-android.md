@@ -36,7 +36,7 @@ Like most of my posts, this is not a out-of-the-box solution and requires some k
 
 Just to give you an impression, here is a screenshot of my current layout, I control my media center with, when I don't expect immediate response.
 
-![24947]({{ site.baseurl }}/images/posts/2013/06/24947.png)
+[<img width="288" height="461" alt="24947" src="{{ site.baseurl }}/images/posts/2013/06/24947.png"/>]({{ site.baseurl }}/images/posts/2013/06/24947.png)
 
 Note: I blurred the icons due to copyright. The icons show icons of radio streams I listen to and a click on the icon would start the  stream.
 
@@ -56,11 +56,11 @@ Install [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.and
 
 Open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm), switch to the **Tasks** tab, click on the plus sign and enter some name for your task.
 
-![24923]({{ site.baseurl }}/images/posts/2013/06/24923.png)
+[<img width="288" height="461" alt="24923" src="{{ site.baseurl }}/images/posts/2013/06/24923.png"/>]({{ site.baseurl }}/images/posts/2013/06/24923.png)
 
 In the next screen, select Plugin and then SSH Command. Then you can set up the command by clicking on the Edit button. The screen shows one of my tasks and should be self explanatory. You need to provide a password only in case you stick to the User/Pass Auth Type. The section **Connection via public/private key** below provides the necessary steps to use a key file (Auth Type = Keyfile).
 
-![24948]({{ site.baseurl }}/images/posts/2013/06/24948.png)
+[<img width="288" height="461" alt="24948" src="{{ site.baseurl }}/images/posts/2013/06/24948.png"/>]({{ site.baseurl }}/images/posts/2013/06/24948.png)
 
 Once you are done, click on **Done** in the upper right corner. In the next screen click on the **Action Edit** button in the upper left corner.
 
@@ -68,17 +68,17 @@ In the next screen, click on the grid in the lower right corner, in order to sel
 
 Then you need to click on the Task button in the upper left corner. Else [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) might complain in the next step.
 
-![24930]({{ site.baseurl }}/images/posts/2013/06/24930.png)
+[<img width="288" height="461" alt="24930" src="{{ site.baseurl }}/images/posts/2013/06/24930.png"/>]({{ site.baseurl }}/images/posts/2013/06/24930.png)
 
 Now you can go to the widget selection page and drag the Task widget on one of your home screens.
 
-![24928]({{ site.baseurl }}/images/posts/2013/06/24928.png)
+[<img width="288" height="461" alt="24928" src="{{ site.baseurl }}/images/posts/2013/06/24928.png"/>]({{ site.baseurl }}/images/posts/2013/06/24928.png)
 
 This will open [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) again. Select your task from the list (e.g. Stop 30). Make sure to click on **Task** in the upper right corner, again. If you click on Cancel, Back or Home, the widget won't get created.
 
 If everything went well, you'll now have the task's icon on one of your home screens and you should be able to execute your specified command on your remote machine. Don't forget that it takes some seconds until the command gets send.
 
-![24931]({{ site.baseurl }}/images/posts/2013/06/24931.png)
+[<img width="288" height="461" alt="24931" src="{{ site.baseurl }}/images/posts/2013/06/24931.png"/>]({{ site.baseurl }}/images/posts/2013/06/24931.png)
 
 ## Central script directory (optional)
 

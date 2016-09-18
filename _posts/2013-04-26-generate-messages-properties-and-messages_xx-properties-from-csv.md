@@ -39,7 +39,7 @@ To make sure that we are on the same page, here's an example:
 
 ##### messages.csv
 
-![table]({{ site.baseurl }}/images/posts/2013/04/table.png)
+[<img width="230" height="86" alt="table" src="{{ site.baseurl }}/images/posts/2013/04/table.png"/>]({{ site.baseurl }}/images/posts/2013/04/table.png)
 
 or rather
 
@@ -197,21 +197,21 @@ print $fh "}";
 
 ## LibreOffice CSV Export Settings
 
-![libre office csv export]({{ site.baseurl }}/images/posts/2013/04/libre_office_csv_export.png)
+[<img width="300" height="129" alt="Libre Office CSV Export" src="{{ site.baseurl }}/images/posts/2013/04/libre_office_csv_export.png"/>]({{ site.baseurl }}/images/posts/2013/04/libre_office_csv_export.png)
 
 ## Project Structure
 
-![project structure]({{ site.baseurl }}/images/posts/2013/04/project_structure.png)
+[<img width="300" height="129" alt="project structure" src="{{ site.baseurl }}/images/posts/2013/04/project_structure.png"/>]({{ site.baseurl }}/images/posts/2013/04/project_structure.png)
 
 ## Table
 
-![table]({{ site.baseurl }}/images/posts/2013/04/table.png)
+[<img width="230" height="86" alt="table" src="{{ site.baseurl }}/images/posts/2013/04/table.png"/>]({{ site.baseurl }}/images/posts/2013/04/table.png)
 
 ## Builder Settings
 
-![Eclipse builder settings 2]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings_2.png)
+[<img width="300" height="250" alt="Eclipse builder settings 2" src="{{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings_2.png"/>]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings_2.png)
 
-![Eclipse builder settings]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings.png)
+[<img width="300" height="250" alt="Eclipse builder settings" src="{{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings.png"/>]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings.png)
 
 # Final Words
 
