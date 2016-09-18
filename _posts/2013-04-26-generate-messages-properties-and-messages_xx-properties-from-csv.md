@@ -201,7 +201,7 @@ print $fh "}";
 
 ## Project Structure
 
-[<img width="300" height="129" alt="project structure" src="{{ site.baseurl }}/images/posts/2013/04/project_structure.png"/>]({{ site.baseurl }}/images/posts/2013/04/project_structure.png)
+[<img width="188" height="300" alt="project structure" src="{{ site.baseurl }}/images/posts/2013/04/project_structure.png"/>]({{ site.baseurl }}/images/posts/2013/04/project_structure.png)
 
 ## Table
 
