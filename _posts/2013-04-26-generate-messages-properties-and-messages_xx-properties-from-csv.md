@@ -39,7 +39,7 @@ To make sure that we are on the same page, here's an example:
 
 ##### messages.csv
 
-[<img class="alignnone size-full wp-image-96" alt="table" src="http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png?resize=230%2C86" data-recalc-dims="1" />](http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png)
+![table]({{ site.baseurl }}/images/posts/2013/04/table.png)
 
 or rather
 
@@ -197,21 +197,21 @@ print $fh "}";
 
 ## LibreOffice CSV Export Settings
 
-[<img class="alignnone size-medium wp-image-94" alt="libre_office_csv_export" src="http://i2.wp.com/yabapal.files.wordpress.com/2013/04/libre_office_csv_export.png?resize=300%2C129" data-recalc-dims="1" />](http://i2.wp.com/yabapal.files.wordpress.com/2013/04/libre_office_csv_export.png)
+![libre office csv export]({{ site.baseurl }}/images/posts/2013/04/libre_office_csv_export.png)
 
 ## Project Structure
 
-[<img class="alignnone size-medium wp-image-95" alt="project_structure" src="http://i1.wp.com/yabapal.files.wordpress.com/2013/04/project_structure.png?resize=188%2C300" data-recalc-dims="1" />](http://i1.wp.com/yabapal.files.wordpress.com/2013/04/project_structure.png)
+![project structure]({{ site.baseurl }}/images/posts/2013/04/project_structure.png)
 
 ## Table
 
-[<img class="alignnone size-full wp-image-96" alt="table" src="http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png?resize=230%2C86" data-recalc-dims="1" />](http://i0.wp.com/yabapal.files.wordpress.com/2013/04/table.png)
+![table]({{ site.baseurl }}/images/posts/2013/04/table.png)
 
 ## Builder Settings
 
-[<img class="alignnone size-medium wp-image-102" alt="eclipse_builder_settings_2" src="http://i0.wp.com/yabapal.files.wordpress.com/2013/04/eclipse_builder_settings_2.png?resize=300%2C250" data-recalc-dims="1" />](http://i0.wp.com/yabapal.files.wordpress.com/2013/04/eclipse_builder_settings_2.png)
+![Eclipse builder settings 2]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings_2.png)
 
-[<img class="alignnone size-medium wp-image-93" alt="eclipse_builder_settings" src="http://i1.wp.com/yabapal.files.wordpress.com/2013/04/eclipse_builder_settings.png?resize=300%2C142" data-recalc-dims="1" />](http://i1.wp.com/yabapal.files.wordpress.com/2013/04/eclipse_builder_settings.png)
+![Eclipse builder settings]({{ site.baseurl }}/images/posts/2013/04/eclipse_builder_settings.png)
 
 # Final Words
 
