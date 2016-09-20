@@ -3,7 +3,6 @@ id: 105
 title: Generic ssh remote for Android / ssh widgets for Android
 date: 2013-06-09T21:41:23+00:00
 author: Björn Bilger
-layout: post
 permalink: /2013/06/09/generic-ssh-remote-for-android-ssh-widgets-for-android/
 categories:
   - Android

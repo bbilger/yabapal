@@ -3,7 +3,6 @@ id: 219
 title: 'Causes of "Remounting filesystem read-only" / "Detected aborted journal"'
 date: 2014-02-06T00:57:42+00:00
 author: Björn Bilger
-layout: post
 permalink: /2014/02/06/causes-of-remounting-filesystem-read-only-detected-aborted-journal/
 categories:
   - Raspberry Pi

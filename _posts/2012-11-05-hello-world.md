@@ -3,7 +3,6 @@ id: 1
 title: Hello world!
 date: 2012-11-05T22:16:34+00:00
 author: Björn Bilger
-layout: post
 permalink: /2012/11/05/hello-world/
 categories:
   - Uncategorized

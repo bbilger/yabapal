@@ -3,7 +3,6 @@ id: 167
 title: 'Java Generics - Multiple Bounds'
 date: 2013-07-04T21:48:10+00:00
 author: Björn Bilger
-layout: post
 permalink: /2013/07/04/java-generics-multiple-bounds/
 categories:
   - Java

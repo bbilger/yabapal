@@ -3,7 +3,6 @@ id: 89
 title: Generate messages.properties and messages_xx.properties from CSV
 date: 2013-04-26T20:57:41+00:00
 author: Björn Bilger
-layout: post
 permalink: /2013/04/26/generate-messages-properties-and-messages_xx-properties-from-csv/
 categories:
   - Java

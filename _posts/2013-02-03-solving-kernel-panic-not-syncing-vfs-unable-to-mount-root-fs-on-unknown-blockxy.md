@@ -3,7 +3,6 @@ id: 55
 title: 'Solving: Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(x,y)'
 date: 2013-02-03T22:22:27+00:00
 author: Björn Bilger
-layout: post
 permalink: /2013/02/03/solving-kernel-panic-not-syncing-vfs-unable-to-mount-root-fs-on-unknown-blockxy/
 categories:
   - Linux

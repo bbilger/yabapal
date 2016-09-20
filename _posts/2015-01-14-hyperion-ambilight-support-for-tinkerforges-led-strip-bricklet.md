@@ -3,7 +3,6 @@ id: 238
 title: 'Hyperion (Ambilight) Support for Tinkerforge''s LED Strip Bricklet'
 date: 2015-01-14T21:21:25+00:00
 author: Björn Bilger
-layout: post
 permalink: /2015/01/14/hyperion-ambilight-support-for-tinkerforges-led-strip-bricklet/
 categories:
   - Linux

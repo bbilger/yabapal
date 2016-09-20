@@ -3,7 +3,6 @@ id: 223
 title: libtinkerforge
 date: 2014-03-03T22:18:36+00:00
 author: Björn Bilger
-layout: post
 permalink: /2014/03/03/libtinkerforge/
 categories:
   - Linux

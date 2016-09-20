@@ -3,7 +3,6 @@ id: 70
 title: Using jQuery Mobile Icon Pack with PrimeFaces Mobile
 date: 2013-03-02T00:07:35+00:00
 author: Björn Bilger
-layout: post
 permalink: /2013/03/02/using-jquery-mobile-icon-pack-with-primefaces-mobile/
 categories:
   - Java EE
