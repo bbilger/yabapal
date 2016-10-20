@@ -5,13 +5,13 @@ author: Björn Bilger
 permalink: /2016/10/20/jrestless-build-serverless-jax-rs-applications/
 categories:
   - Java
-  - AWS
   - JRestless
 tags:
   - Java
   - AWS Lambda
   - JRestless
   - JAX-RS
+  - Jersey
 ---
 
 AWS Lambda is a very interesting serverless computing service provided by Amazon. It allows you to run code without the burden of setting up a server - and even better you only pay what you use with the first 1,000,000 calls being free of charge.
@@ -22,7 +22,7 @@ That's why I am working on a framework called JRestless to avoid the cloud vendo
 
 JRestless is designed to use AWS Lambda (and AWS API Gateway) to run your RESTful APIs and/or microservices using JAX-RS. Jersey is used to provide compliance with the JAX-RS standard and allows you to use its extensions, including integration for **Spring 4.x**, as well.
 
-You can find JRestless together with example applications and more documentation on GitHub: https://github.com/bbilger/jrestless
+You can find JRestless together with example applications and documentation on GitHub: https://github.com/bbilger/jrestless
 
 <!--more-->
 
