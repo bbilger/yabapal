@@ -146,6 +146,7 @@ public class SampleResource {
 ```
 
 Create the request handler (`src/main/java/com/jrestless/aws/examples/RequestHandler.java`):
+
 ```java
 package com.jrestless.aws.examples;
 
@@ -161,9 +162,11 @@ public class RequestHandler extends GatewayRequestObjectHandler {
 ```
 
 Build your function from within the directory `aws-gateway-usage-example`:
+
 ```bash
 gradle build
 ```
+
 This, amongst other things, creates a deployable zip file of your function (`build/distributions/aws-gateway-usage-example.zip`) using the dependent task `buildZip`.
 
 Now you can deploy the function using _serverless_:
@@ -173,6 +176,7 @@ serverless deploy
 ```
 
 If `serverless` is configured correctly, it should show you an endpoint in its output.
+
 ```
 ...
 endpoints
