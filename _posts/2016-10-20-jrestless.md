@@ -3,6 +3,7 @@ title: JRestless - Build Serverless JAX-RS Applications
 date: 2016-10-20T01:00:00+00:00
 author: Björn Bilger
 permalink: /2016/10/20/jrestless-build-serverless-jax-rs-applications/
+excerpt: Use JRestless to run JAX-RS applications on AWS Lambda - including integration for Spring 4.x
 categories:
   - Java
   - JRestless
@@ -23,8 +24,6 @@ That's why I am working on a framework called JRestless to avoid the cloud vendo
 JRestless is designed to use AWS Lambda (and AWS API Gateway) to run your RESTful APIs and/or microservices using JAX-RS. Jersey is used to provide compliance with the JAX-RS standard and allows you to use its extensions, including integration for **Spring 4.x**, as well.
 
 You can find JRestless together with example applications and documentation on GitHub: https://github.com/bbilger/jrestless
-
-<!--more-->
 
 Avoiding the cloud vendor lock-in by using JAX-RS allows you to develop, test and run your applications locally and - if required - move your application from AWS Lambda to another FaaS (Function as a Service) environment or a normal application server.
 
