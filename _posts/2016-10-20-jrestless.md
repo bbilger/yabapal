@@ -36,15 +36,15 @@ JRestless acts as an integration layer between FaaS environments and Jersey. Sin
 You can use JRestless to develop two different types of AWS Lambda functions:
 
 1. _Gateway functions_ that can be invoked through AWS API Gateway and so normal HTTP request.
-2. _Service functions_ that can be invoked by other Lambda functions (or directly using the AWS SDK). The event object to invoke those function types is similar to a HTTP request. You can abstract the fact that you invoke a Lambda function away by using JRestless' feign client, allowing you to transparently call those function through feign. You can read more about those functions on Github: [jrestless-aws-service-handler](https://github.com/bbilger/jrestless/tree/master/aws/service/jrestless-aws-service-handler)
+2. _Service functions_ that can be invoked by other Lambda functions (or directly using the AWS SDK). The event object to invoke those function types is similar to a HTTP request. You can abstract the fact that you invoke a Lambda function away by using JRestless' [feign](https://github.com/OpenFeign/feign) client, allowing you to transparently call those functions. You can read more about those functions on Github: [jrestless-aws-service-handler](https://github.com/bbilger/jrestless/tree/master/aws/service/jrestless-aws-service-handler)
 
 In the beginning it might be difficult to configure AWS properly and to deploy your Lambda functions. So you might be interested in the fact that you can use the [serverless framework](https://github.com/serverless/serverless) together with JRestless to get your applications deployed easily.
 
 Since _gateway functions_ are probably the most interesting ones, I want to end this post with a simple example.
 
-Install _serverless_ as described in the docs https://serverless.com/framework/docs/guide/installing-serverless/
+Install _serverless_ as described in the docs [https://serverless.com/framework/docs/guide/installing-serverless/](https://serverless.com/framework/docs/guide/installing-serverless/)
 
-Setup your AWS account as described in the docs https://serverless.com/framework/docs/providers/aws/setup/
+Setup your AWS account as described in the docs [https://serverless.com/framework/docs/providers/aws/setup/](https://serverless.com/framework/docs/providers/aws/setup/)
 
 Create a new function using _serverless_
 
