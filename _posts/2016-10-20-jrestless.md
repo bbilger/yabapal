@@ -23,17 +23,18 @@ That's why I am working on a framework called JRestless to avoid the cloud vendo
 
 JRestless is designed to use AWS Lambda (and AWS API Gateway) to run your RESTful APIs and/or microservices using JAX-RS. Jersey is used to provide compliance with the JAX-RS standard and allows you to use its extensions, including integration for **Spring 4.x**, as well.
 
-You can find JRestless together with example applications and documentation on GitHub: https://github.com/bbilger/jrestless
+You can find JRestless together with example applications and documentation on GitHub: [https://github.com/bbilger/jrestless](https://github.com/bbilger/jrestless)
 
 Avoiding the cloud vendor lock-in by using JAX-RS allows you to develop, test and run your applications locally and - if required - move your application from AWS Lambda to another FaaS (Function as a Service) environment or a normal application server.
 
-JRestless abstracts away AWS Lambda (and AWS API Gateway) specifics and provides a JAX-RS container allowing you to develop your application using JAX-RS. _In case you are not familiar with JAX-RS: JAX-RS is a standard for Java to develop REST APIs._
+JRestless abstracts away AWS Lambda (and AWS API Gateway) specifics and provides a JAX-RS container allowing you to develop your application using JAX-RS. In case you are not familiar with JAX-RS: JAX-RS is a standard for Java to develop REST APIs.
 
 JRestless doesn't implement a JAX-RS container itself but uses [Jersey](https://jersey.java.net/) - the reference implementation for JAX-RS. So you get a JAX-RS compliant container and you can use mostly all JAX-RS features like request/response filters, plus some of the extension Jersey provides on top which includes integration for **Spring 4.x** to name just one.
 
-JRestless acts as an integration layer between FaaS environments and Jersey. Since AWS Lambda is the only Faas environment that supports Java at moment, it is the only supported environment right now. JRestless, however, is designed to add support for other platforms, quickly, once Java is supported by them.
+JRestless acts as an integration layer between FaaS environments and Jersey. Since AWS Lambda is the only Faas environment that supports Java at moment, it is the only supported environment right now. JRestless, however, is designed to support other platforms, as well, once Java is added.
 
 You can use JRestless to develop two different types of AWS Lambda functions:
+
 1. _Gateway functions_ that can be invoked through AWS API Gateway and so normal HTTP request.
 2. _Service functions_ that can be invoked by other Lambda functions (or directly using the AWS SDK). The event object to invoke those function types is similar to a HTTP request. You can abstract the fact that you invoke a Lambda function away by using JRestless' feign client, allowing you to transparently call those function through feign. You can read more about those functions on Github: [jrestless-aws-service-handler](https://github.com/bbilger/jrestless/tree/master/aws/service/jrestless-aws-service-handler)
 
