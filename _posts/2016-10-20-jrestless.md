@@ -3,7 +3,7 @@ title: JRestless - Build Serverless JAX-RS Applications
 date: 2016-10-20T01:00:00+00:00
 author: Björn Bilger
 permalink: /2016/10/20/jrestless-build-serverless-jax-rs-applications/
-excerpt: Use JRestless to run JAX-RS applications on AWS Lambda - including integration for Spring 4.x
+excerpt: Announcing JRestless - Serverless JAX-RS applications on AWS Lambda including Spring 4.x integration
 categories:
   - Java
   - JRestless
@@ -27,9 +27,9 @@ You can find JRestless together with example applications and documentation on G
 
 Avoiding the cloud vendor lock-in by using JAX-RS allows you to develop, test and run your applications locally and - if required - move your application from AWS Lambda to another FaaS (Function as a Service) environment or a normal application server.
 
-JRestless abstracts away AWS Lambda (and AWS API Gateway) specifics and provides a JAX-RS container allowing you to develop your application using JAX-RS. In case you are not familiar with JAX-RS: JAX-RS is a standard for Java to develop REST APIs.
+JRestless abstracts away AWS Lambda (and AWS API Gateway) specifics and allows you to develop your application using JAX-RS. In case you are not familiar with JAX-RS: JAX-RS is a standard for Java to develop REST APIs.
 
-JRestless doesn't implement a JAX-RS container itself but uses [Jersey](https://jersey.java.net/) - the reference implementation for JAX-RS. So you get a JAX-RS compliant container and you can use mostly all JAX-RS features like request/response filters, plus some of the extension Jersey provides on top which includes integration for **Spring 4.x** to name just one.
+JRestless doesn't implement the JAX-RS APIs itself but uses [Jersey](https://jersey.java.net/) - the reference implementation for JAX-RS - and provides a container for it. So you get JAX-RS compliance and you can use mostly all JAX-RS features like request/response filters, plus some of the extension Jersey provides on top which includes integration for **Spring 4.x** to name just one.
 
 JRestless acts as an integration layer between FaaS environments and Jersey. Since AWS Lambda is the only Faas environment that supports Java at moment, it is the only supported environment right now. JRestless, however, is designed to support other platforms, as well, once Java is added.
 
